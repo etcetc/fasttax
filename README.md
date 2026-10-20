@@ -9,7 +9,6 @@ brackets, and what more income would cost.
   Estimates are saved as files on your own device.
 - **All 50 states and DC.** Rules live in `src/data/2026/`, one file per state, each with
   its sources and a list of figures not yet published for 2026.
-- **An estimate, not tax advice.**
 
 ## Develop
 
@@ -24,3 +23,14 @@ npm run build    # static site in dist/
 
 Static site; `vercel.json` sets the build and the security headers. Import the repository
 in Vercel and it deploys on every push.
+
+## Disclaimer
+
+FastTax gives an estimate, not tax, legal or financial advice. Tax rules are simplified,
+some 2026 figures were not yet published when this was built (each state's file lists
+them), and results can be wrong. Don't rely on it to file a return or make a decision;
+check with a tax professional or the official forms.
+
+## License
+
+MIT, see [LICENSE](LICENSE). The bundled Public Sans font is under the SIL Open Font License.
