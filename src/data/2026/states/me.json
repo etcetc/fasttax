@@ -1,0 +1,60 @@
+{
+  "state": "ME",
+  "name": "Maine",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "2026 rate schedules, standard deduction ($15,700/$31,400/$23,550), personal exemption $5,300, age-65 add-on $1,650 married / $2,050 unmarried, 2% surcharge thresholds: Maine Revenue Services, 'Maine Individual Income Tax 2026 Rates', revised May 20, 2026 (maine.gov/revenue/sites/maine.gov.revenue/files/2026-05/ind_tax_rate_sched_2026_rev.pdf)",
+    "Standard deduction increase (L.D. 705, 2026) and 2% surcharge on Maine taxable income for tax years from 2026 (L.D. 2212, approved April 9, 2026): MRS 'Income Tax Law Changes' (maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/Income%20Tax%20Law%20Changes.pdf)",
+    "Standard/itemized deduction phase-out (thresholds $102,250/$204,550/$153,400, ranges $75,000/$150,000/$112,500) and itemized cap $37,100: MRS 2026 estimated-tax worksheet (maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/26_item_stand_ ded_phaseout_wksht_0.pdf)",
+    "Personal exemption phase-out (thresholds $341,000/$409,150/$375,050/$204,575, range $125,000; $62,500 MFS): MRS 2026 estimated-tax worksheet (maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/26_1040es_pers_exempt_phaseout_wksht.pdf)",
+    "Dependent exemption credit ($300 base, indexed from 2025; reduced $20 per $500 of Maine AGI over $100,000/$150,000/$125,000/$75,000): 36 M.R.S. §5219-SS (legislature.maine.gov/statutes/36/title36sec5219-SS.html); 2025 amount $305: TaxSlayer 'What's new in 2025 for Maine'"
+  ],
+  "provisional": [
+    "Dependent credit $305 per dependent is the 2025 amount; it is inflation-indexed and the 2026 figure was not found",
+    "Dependent credit phase-out thresholds ($100,000 single, $150,000 joint, $125,000 head of household, $75,000 separate) are 2025 values; indexed from 2026, 2026 figures not found"
+  ],
+  "notes": [
+    "Maine itemized deductions are not included; the standard deduction is used. If you itemize and earn below about $100,000 ($200,000 joint), Maine tax may be overstated.",
+    "Maine's dependent credit is shown as $305 per dependent; it is doubled for children under 6 and is refundable."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.058], [27400, 0.0675], [64850, 0.0715]],
+    "mfj": [[0, 0.058], [54850, 0.0675], [129750, 0.0715]],
+    "mfs": [[0, 0.058], [27400, 0.0675], [64850, 0.0715]],
+    "hoh": [[0, 0.058], [41100, 0.0675], [97300, 0.0715]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 15700, "mfj": 31400, "mfs": 15700, "hoh": 23550 },
+    "seniorExtra": 1650,
+    "phaseout": {
+      "start": { "single": 102250, "mfj": 204550, "mfs": 102250, "hoh": 153400 },
+      "end": { "single": 177250, "mfj": 354550, "mfs": 177250, "hoh": 265900 }
+    }
+  },
+  "exemptions": {
+    "perFiler": 5300,
+    "perDependent": 0,
+    "perSenior": 0,
+    "phaseout": {
+      "start": { "single": 341000, "mfj": 409150, "mfs": 204575, "hoh": 375050 },
+      "end": { "single": 466000, "mfj": 534150, "mfs": 267075, "hoh": 500050 }
+    }
+  },
+  "credits": {
+    "perFiler": 0,
+    "perDependent": 305,
+    "perSenior": 0,
+    "phaseout": {
+      "start": { "single": 100000, "mfj": 150000, "mfs": 75000, "hoh": 125000 },
+      "ratePerDollar": 0.04
+    }
+  },
+  "surtax": {
+    "threshold": { "single": 1000000, "mfj": 1500000, "mfs": 750000, "hoh": 1500000 },
+    "rate": 0.02,
+    "base": "taxable",
+    "label": "Maine 2% income tax surcharge"
+  }
+}

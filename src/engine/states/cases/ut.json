@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, wages + interest: flat 4.45% less the taxpayer credit, partly phased out",
+    "inputs": { "filingStatus": "single", "wages": 60000, "taxableInterest": 1000 },
+    "federal": { "agi": 61000, "taxableIncome": 44900, "incomeTax": 5140, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 2298.45,
+    "working": "TC-40: line 4 federal AGI 61,000; no additions or subtractions, so line 9 Utah taxable income = 61,000. Line 10 tax = 61,000 x 4.45% = 2,714.50. Line 11 exemption = 0 dependents. Line 12 federal standard deduction 16,100. Line 15 = 16,100. Line 16 initial credit = 16,100 x 6% = 966.00. Line 17 base (single, 2026) 18,696. Line 18 = 61,000 - 18,696 = 42,304. Line 19 phase-out = 42,304 x 1.3% = 549.952. Line 20 credit = 966 - 549.952 = 416.048. Line 22 Utah tax = 2,714.50 - 416.048 = 2,298.45 (the form rounds each line to whole dollars: 2,715 - 416 = 2,299). Federal: 61,000 - 16,100 = 44,900; tax = 1,240 + 12% x (44,900 - 12,400) = 5,140."
+  },
+  {
+    "description": "Joint, two children, wages + qualified dividends + long-term gains: credit includes dependent exemptions and phases out above the joint base; gains taxed at the flat rate",
+    "inputs": { "filingStatus": "mfj", "wages": 90000, "qualifiedDividends": 3000, "longTermGains": 7000, "childrenUnder17": 2 },
+    "federal": { "agi": 100000, "taxableIncome": 67800, "incomeTax": 2040, "standardDeduction": 32200, "itemizes": false },
+    "expectedStateTax": 3078.58,
+    "working": "TC-40: line 9 Utah taxable income = federal AGI 100,000 (Utah has no capital gains preference). Line 10 tax = 100,000 x 4.45% = 4,450.00. Line 11 personal exemption = 2 x 2,111 = 4,222. Line 12 federal standard deduction 32,200. Line 13/15 = 36,422. Line 16 = 36,422 x 6% = 2,185.32. Line 17 base (joint, 2026) 37,392. Line 18 = 100,000 - 37,392 = 62,608. Line 19 = 62,608 x 1.3% = 813.904. Line 20 credit = 2,185.32 - 813.904 = 1,371.416. Line 22 = 4,450.00 - 1,371.416 = 3,078.58. (Utah's separate child tax credit is fully phased out at this income: 2 x 1,000 - 10% x (100,000 - 61,000) < 0.) Federal: TI = 100,000 - 32,200 = 67,800; ordinary part 57,800 -> 2,480 + 12% x 33,000 = 6,440; 10,000 of gains all in the 0% band (top 98,900); child tax credit 2 x 2,200 = 4,400; income tax 2,040."
+  }
+]

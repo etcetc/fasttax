@@ -1,0 +1,21 @@
+{
+  "state": "PA",
+  "name": "Pennsylvania",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "Flat 3.07% on each class of income, no standard deduction, itemized deductions or personal exemptions: 72 P.S. 7302 (Tax Reform Code of 1971, as amended 2004); Pennsylvania Department of Revenue, Personal Income Tax (revenue.pa.gov/PIT)"
+  ],
+  "provisional": [],
+  "notes": [
+    "Local earned income tax on wages and self-employment income (commonly 1-2%, 3.75% in Philadelphia) is not included.",
+    "Pennsylvania's Tax Forgiveness for low incomes and the Working Pennsylvanians Tax Credit are not included."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.0307]],
+    "mfj": [[0, 0.0307]],
+    "mfs": [[0, 0.0307]],
+    "hoh": [[0, 0.0307]]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "state": "AZ",
+  "name": "Arizona",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": ["Rate 2.5%, 25% subtraction of net long-term gain on assets acquired after 2011, $2,100 exemption per person 65+: 2025 Form 140, https://taxsim.nber.org/historical_state_tax_forms/AZ/2025/FORMS_INDIVIDUAL_2025_140_f.pdf", "2025 standard deduction ($15,750 single/MFS, $31,500 MFJ, $23,625 HOH) and use of federal Schedule A deductions: 2025 Form 140 booklet, https://azdor.gov/sites/default/files/document/FORMS_INDIVIDUAL_2025_140Booklet.pdf", "HB 4168 (2026): subtraction of the federal senior deduction (2025+), dependent credit $125 under 17 (2026+), $10,000 cap on itemized state and local taxes (2026+): https://www.azleg.gov/legtext/57leg/2R/summary/H.HB4168_060926_APPROP.DOCX.htm", "Dependent credit phaseout ($200,000; $400,000 joint) unchanged by HB 4168: https://www.currentfederaltaxdevelopments.com/blog/2026/6/14/arizona-hb-4168-title-43-income-tax-overhaul-aligned-with-the-one-big-beautiful-bill-act-obbba", "AZ Legislature, HB 4168 summary (6/9/2026): https://www.azleg.gov/legtext/57leg/2R/summary/H.HB4168_060926_APPROP.DOCX.htm"],
+  "provisional": ["2026 standard deduction $15,750 / $31,500 / $23,625 per the legislature's HB 4168 summary (6/9/2026); enactment and any 2026 inflation indexing not confirmed", "The $2,100 exemption for each person 65+ and the 25% long-term gain subtraction are from the 2025 Form 140.", "Dependent credit phaseout (5% per $1,000 above $200,000, or $400,000 joint) is from a secondary summary of HB 4168.", "The $5,000 itemized property-tax cap for married filing separately is assumed; the law states a $10,000 cap without a separate-filer figure."],
+  "notes": ["Assumes long-term gains are on assets bought after 2011, so 25% of them is subtracted."],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.025]],
+    "mfj": [[0, 0.025]],
+    "mfs": [[0, 0.025]],
+    "hoh": [[0, 0.025]]
+  },
+  "standardDeduction": {
+    "amount": {
+      "single": 15750,
+      "mfj": 31500,
+      "mfs": 15750,
+      "hoh": 23625
+    }
+  },
+  "itemized": {
+    "medicalFloorRate": 0.075,
+    "propertyTax": true,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": {
+      "single": 10000,
+      "mfj": 10000,
+      "mfs": 5000,
+      "hoh": 10000
+    }
+  },
+  "exemptions": {
+    "perFiler": 0,
+    "perDependent": 0,
+    "perSenior": 8100,
+    "phaseout": {
+      "start": {
+        "single": 75000,
+        "mfj": 150000,
+        "mfs": 0,
+        "hoh": 75000
+      },
+      "ratePerDollar": 0.06
+    }
+  },
+  "credits": {
+    "perFiler": 0,
+    "perDependent": 125,
+    "perSenior": 0,
+    "phaseout": {
+      "start": {
+        "single": 200000,
+        "mfj": 400000,
+        "mfs": 200000,
+        "hoh": 200000
+      },
+      "end": {
+        "single": 220000,
+        "mfj": 420000,
+        "mfs": 220000,
+        "hoh": 220000
+      }
+    }
+  },
+  "capitalGains": {
+    "exclusionRate": 0.25
+  }
+}

@@ -1,0 +1,36 @@
+[
+  {
+    "description": "OH single, wages + interest",
+    "inputs": {
+      "filingStatus": "single",
+      "wages": 95000,
+      "taxableInterest": 2000
+    },
+    "federal": {
+      "agi": 97000,
+      "taxableIncome": 80900,
+      "incomeTax": 12510,
+      "standardDeduction": 16100,
+      "itemizes": false
+    },
+    "expectedStateTax": 2230.88,
+    "working": "Ohio AGI = federal AGI 97,000 (under $500,000 MAGI, exemption 1,900). Ohio taxable = 95,100. 2026 schedule (R.C. 5747.02): 332.00 + 0.0275 x (95,100 - 26,050) = 332.00 + 1,898.875 = 2,230.875 -> 2,230.88."
+  },
+  {
+    "description": "OH single, high income: flat 2.75% above $26,050, gains taxed as ordinary, no exemption at $500,000+ MAGI",
+    "inputs": {
+      "filingStatus": "single",
+      "wages": 500000,
+      "longTermGains": 300000
+    },
+    "federal": {
+      "agi": 800000,
+      "taxableIncome": 783900,
+      "incomeTax": 195054.25,
+      "standardDeduction": 16100,
+      "itemizes": false
+    },
+    "expectedStateTax": 21615.63,
+    "working": "Ohio AGI 800,000; MAGI >= 500,000, so no personal exemption. Ohio taxable = 800,000. 332.00 + 0.0275 x (800,000 - 26,050) = 332.00 + 21,283.625 = 21,615.625 -> 21,615.63."
+  }
+]

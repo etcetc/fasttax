@@ -1,0 +1,63 @@
+{
+  "state": "MD",
+  "name": "Maryland",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "2026 state brackets incl. new 6.25%/6.5% brackets from Chapter 604, Acts of 2025: Comptroller, '2026 Maryland State and Local Withholding Information' (marylandcomptroller.gov/content/dam/mdcomp/md/state-payroll/memos/2026/2026-maryland-state-and-local-withholding-information.pdf)",
+    "Chapter 604 (BRFA 2025): flat standard deduction indexed after 2025, itemized deductions reduced by 7.5% of FAGI over $200,000, 2% capital gains surtax for FAGI over $350,000, local cap 3.3% from 2026: Comptroller Tax Alert (marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/alerts/tax-alert-changes-to-standard-and-itemized-deductions-and-to-state-and-local-income-tax-rates-from-the-2025-legislative-session.pdf); Form 502CG (2025)",
+    "2026 standard deduction $3,400 and exemption table ($3,200, reduced by federal AGI), $1,000 extra for 65+: Comptroller, 2026 Form MW507 instructions (marylandcomptroller.gov/content/dam/mdcomp/md/state-payroll/forms/withholding/2026-instructions-mw507.pdf); 2025 Form 502 line 19",
+    "Itemizing: federal Schedule A total less state and local income taxes (2025 Form 502 lines 17a-17c); allowed only if itemized federally (TaxSlayer support; Venable, 'Maryland's Response to the TCJA', 2018); property tax counts up to the federal SALT cap (MSATP)",
+    "2026 county rates (3.20% in Baltimore City, Baltimore, Howard, Montgomery, Prince George's and most others; range 2.25%-3.30%): DLS '2026 County Local Tax Rates' (dls.maryland.gov/pubs/prod/NoPblTabPDF/2026CountyLocalTaxRates.pdf)"
+  ],
+  "provisional": [
+    "Standard deduction for joint/head-of-household filers ($6,800) is inferred as twice the published 2026 single amount ($3,400); the 2026 Form 502 instructions are not yet published",
+    "Property-tax cap uses the 2026 federal SALT cap ($40,400; $20,200 separate); its reduction for income over $505,000 is not applied"
+  ],
+  "notes": [
+    "Includes county income tax at 3.2%, the rate in Baltimore City and most counties (Montgomery, Prince George's, Baltimore, Howard); county rates range from 2.25% to 3.3%.",
+    "Maryland cuts itemized deductions by 7.5% of federal AGI over $200,000 ($100,000 separate); this is not applied, so tax may be understated for high-income itemizers.",
+    "The 2% capital-gains surtax (federal AGI over $350,000) is applied only to gains above about $350,000 of taxable income, so it can be understated just over that level."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.02], [1000, 0.03], [2000, 0.04], [3000, 0.0475], [100000, 0.05], [125000, 0.0525], [150000, 0.055], [250000, 0.0575], [500000, 0.0625], [1000000, 0.065]],
+    "mfj": [[0, 0.02], [1000, 0.03], [2000, 0.04], [3000, 0.0475], [150000, 0.05], [175000, 0.0525], [225000, 0.055], [300000, 0.0575], [600000, 0.0625], [1200000, 0.065]],
+    "mfs": [[0, 0.02], [1000, 0.03], [2000, 0.04], [3000, 0.0475], [100000, 0.05], [125000, 0.0525], [150000, 0.055], [250000, 0.0575], [500000, 0.0625], [1000000, 0.065]],
+    "hoh": [[0, 0.02], [1000, 0.03], [2000, 0.04], [3000, 0.0475], [150000, 0.05], [175000, 0.0525], [225000, 0.055], [300000, 0.0575], [600000, 0.0625], [1200000, 0.065]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 3400, "mfj": 6800, "mfs": 3400, "hoh": 6800 }
+  },
+  "itemized": {
+    "medicalFloorRate": 0.075,
+    "propertyTax": true,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": { "single": 40400, "mfj": 40400, "mfs": 20200, "hoh": 40400 },
+    "requiresFederalItemizing": true
+  },
+  "exemptions": {
+    "perFiler": 3200,
+    "perDependent": 3200,
+    "perSenior": 1000,
+    "phaseout": {
+      "start": { "single": 100000, "mfj": 150000, "mfs": 100000, "hoh": 150000 },
+      "end": { "single": 137500, "mfj": 187500, "mfs": 137500, "hoh": 187500 }
+    }
+  },
+  "capitalGains": {
+    "schedule": {
+      "single": [[0, 0.02], [1000, 0.03], [2000, 0.04], [3000, 0.0475], [100000, 0.05], [125000, 0.0525], [150000, 0.055], [250000, 0.0575], [346600, 0.0775], [500000, 0.0825], [1000000, 0.085]],
+      "mfj": [[0, 0.02], [1000, 0.03], [2000, 0.04], [3000, 0.0475], [150000, 0.05], [175000, 0.0525], [225000, 0.055], [300000, 0.0575], [343200, 0.0775], [600000, 0.0825], [1200000, 0.085]],
+      "mfs": [[0, 0.02], [1000, 0.03], [2000, 0.04], [3000, 0.0475], [100000, 0.05], [125000, 0.0525], [150000, 0.055], [250000, 0.0575], [346600, 0.0775], [500000, 0.0825], [1000000, 0.085]],
+      "hoh": [[0, 0.02], [1000, 0.03], [2000, 0.04], [3000, 0.0475], [150000, 0.05], [175000, 0.0525], [225000, 0.055], [300000, 0.0575], [343200, 0.0775], [600000, 0.0825], [1200000, 0.085]]
+    },
+    "includesQualifiedDividends": false
+  },
+  "localTax": {
+    "rate": 0.032,
+    "label": "County income tax (3.2% typical)",
+    "base": "stateTaxable"
+  }
+}

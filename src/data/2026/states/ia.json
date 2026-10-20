@@ -1,0 +1,30 @@
+{
+  "state": "IA",
+  "name": "Iowa",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "Flat rate 3.8% for 2026: Iowa Department of Revenue press release, Oct 21, 2025 (revenue.iowa.gov/press-release/2025-10-21/idr-announces-2026-individual-income-tax-and-interest-rates); Senate File 2442 (2024)",
+    "Starting point federal taxable income with rolling IRC conformity: IA 1040 Expanded Instructions 2025, 'Conformity with the IRC'",
+    "Exemption credits ($40 per personal and dependent credit, $20 per person 65+ or blind): IA 1040 Expanded Instructions 2025, 'Exemption Credits'",
+    "School district surtax as a percentage of tax: IA 1040 Expanded Instructions 2025, 'School District Surtax/Emergency'; rates: IDR form 41-027 (2025)"
+  ],
+  "provisional": [
+    "Exemption credit amounts ($40 and $20) are from the 2025 IA 1040 instructions; 2026 instructions not yet published"
+  ],
+  "notes": [
+    "Iowa's school district surtax (0–20% of Iowa tax, set by your district; 0% in Des Moines and Davenport, 5% in Cedar Rapids) is not included."
+  ],
+  "startingPoint": "federalTaxable",
+  "brackets": {
+    "single": [[0, 0.038]],
+    "mfj": [[0, 0.038]],
+    "mfs": [[0, 0.038]],
+    "hoh": [[0, 0.038]]
+  },
+  "credits": {
+    "perFiler": 40,
+    "perDependent": 40,
+    "perSenior": 20
+  }
+}

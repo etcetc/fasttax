@@ -1,0 +1,16 @@
+[
+  {
+    "description": "HI single, wages + interest, 2026 standard deduction and one exemption",
+    "inputs": { "filingStatus": "single", "wages": 75000, "taxableInterest": 1500 },
+    "federal": { "agi": 76500, "taxableIncome": 60400, "incomeTax": 8000, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 4010,
+    "working": "HI AGI = 76,500. 2026 standard deduction (Act 46) single 8,000; exemption 1 x 1,144. Taxable 76,500 - 8,000 - 1,144 = 67,356. 2025-2026 single schedule: over $48,000 not over $125,000 = $2,539 + 7.6% of excess over $48,000 -> 2,539 + 7.6% x 19,356 (= 1,471.06) = 4,010.06 -> 4,010 (summing the brackets exactly gives 4,010.26)."
+  },
+  {
+    "description": "HI single with large long-term gain: 7.25% capital-gains alternative tax; qualified dividends taxed as ordinary income",
+    "inputs": { "filingStatus": "single", "wages": 200000, "qualifiedDividends": 10000, "longTermGains": 100000 },
+    "federal": { "agi": 310000, "taxableIncome": 293900, "incomeTax": 53234, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 21724,
+    "working": "HI AGI = 310,000. Taxable 310,000 - 8,000 - 1,144 = 300,856. Regular tax: $20,966 + 10% x (300,856 - 275,000 = 25,856) = 23,551.60. Alternative (HRS 235-51(f), Capital Gains Tax Worksheet): net capital gain 100,000 (qualified dividends not included); ordinary part 300,856 - 100,000 = 200,856, which exceeds the $48,000 top of the brackets below 7.25%, so tax on it = $12,341 + 8.25% x 25,856 = 14,474.12; plus 7.25% x 100,000 = 7,250 -> 21,724.12. Smaller of the two = 21,724."
+  }
+]

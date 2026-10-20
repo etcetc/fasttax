@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, wages and interest, standard deduction and exemption credit",
+    "inputs": { "filingStatus": "single", "wages": 75000, "taxableInterest": 2000 },
+    "federal": { "agi": 77000, "taxableIncome": 60900, "incomeTax": 8110, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 2623.96,
+    "working": "Federal AGI 77,000. Standard deduction (single) 8,850. NE taxable = 68,150. 2026 schedule (single): over 24,760 -> 825.71 + 4.55% x (68,150 - 24,760) = 825.71 + 1,974.245 = 2,799.955. Personal exemption credit 1 x 176. Tax = 2,623.955 (exact brackets: 101.598 + 724.113 + 1,974.245 - 176 = 2,623.956)."
+  },
+  {
+    "description": "Married joint, two children, federal itemizer: Nebraska itemized = Schedule A less state income tax; exemption credits for 4",
+    "inputs": { "filingStatus": "mfj", "wages": 250000, "taxableInterest": 10000, "qualifiedDividends": 15000, "longTermGains": 25000, "childrenUnder17": 2, "propertyTax": 9000, "mortgageInterest": 20000 },
+    "federal": { "agi": 300000, "taxableIncome": 259975.24, "incomeTax": 39590.06, "standardDeduction": 32200, "itemizes": true },
+    "expectedStateTax": 11024.76,
+    "working": "Federal AGI 300,000. Federal itemizes (Schedule A: NE tax 11,024.76 + property 9,000 = 20,024.76 SALT, under the cap; + mortgage 20,000 = 40,024.76 > 32,200). Nebraska itemized = 40,024.76 - state income tax 11,024.76 = 29,000 > standard 17,700. NE taxable = 300,000 - 29,000 = 271,000. 2026 MFJ schedule: over 79,800 -> 3,029.16 + 4.55% x (271,000 - 79,800) = 3,029.16 + 8,699.60 = 11,728.76. Exemption credit: 4 exemptions x 176 = 704. Tax = 11,024.76. (Federal: taxable 259,975.24; ordinary 219,975.24 -> 2,480 + 9,120 + 24,332 + 8,575.24 x 24% = 37,990.06; 40,000 x 15% = 6,000; less child credit 2 x 2,200 = 39,590.06.)"
+  }
+]

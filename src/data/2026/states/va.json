@@ -1,0 +1,36 @@
+{
+  "state": "VA",
+  "name": "Virginia",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "Va. Code 58.1-320: 2% / 3% / 5% / 5.75% brackets at $3,000 / $5,000 / $17,000, same for every filing status (no 2026 rate change per 2026 session)",
+    "Virginia Tax, New Virginia Tax Laws (tax.virginia.gov/news/new-virginia-tax-laws): standard deduction stays $8,750 single / $17,500 joint for TY2026, increases from TY2027",
+    "Virginia Tax, Deductions and Exemptions pages (tax.virginia.gov/deductions, /exemptions): $8,750 for married filing separately; $930 personal and dependent exemption; $800 extra for 65+; must itemize only if itemized federally",
+    "Virginia Tax Bulletin 26-1: fixed IRC conformity at Dec 31, 2025; no SALT cap on Virginia itemized deductions; continues to decouple from the reduced medical-expense floor (10% of AGI applies)"
+  ],
+  "provisional": [],
+  "notes": [
+    "Virginia's age deduction for people 65 and older (up to $12,000 each, reduced above $50,000 single / $75,000 married of adjusted income) is not included.",
+    "The spouse tax adjustment for two-earner couples (up to $259) and the high-income limit on itemized deductions are not included."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.02], [3000, 0.03], [5000, 0.05], [17000, 0.0575]],
+    "mfj": [[0, 0.02], [3000, 0.03], [5000, 0.05], [17000, 0.0575]],
+    "mfs": [[0, 0.02], [3000, 0.03], [5000, 0.05], [17000, 0.0575]],
+    "hoh": [[0, 0.02], [3000, 0.03], [5000, 0.05], [17000, 0.0575]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 8750, "mfj": 17500, "mfs": 8750, "hoh": 8750 }
+  },
+  "itemized": {
+    "medicalFloorRate": 0.1,
+    "propertyTax": true,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": null,
+    "requiresFederalItemizing": true
+  },
+  "exemptions": { "perFiler": 930, "perDependent": 930, "perSenior": 800 }
+}

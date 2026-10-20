@@ -1,0 +1,44 @@
+{
+  "state": "AR",
+  "name": "Arkansas",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "2026 rates and brackets (top rate 3.7%; schedule for net income up to $94,700, schedule above it, bracket adjustment $94,701–$97,600): HB 1001, 2026 First Extraordinary Session, https://npr.brightspotcdn.com/a3/71/ed966e5b46c5be3992703b405077/binder1.pdf; summary https://tax.thomsonreuters.com/news/arkansas-cuts-individual-and-corporate-income-tax-rates/",
+    "2026 withholding formula top row starts at $97,601: https://news.bloombergtax.com/payroll/arkansas-reduces-highest-tax-rate-in-2026-withholding-methods",
+    "Standard deduction $2,470 ($4,940 joint), $29 personal credits (taxpayer, spouse, dependent, 65+, and 65 Special for those not claiming the retirement exemption): 2025 AR1000F instructions, https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR1000F_and_AR1000NR_Instructions.pdf",
+    "50% of net long-term gain taxable: 2025 AR1000D, https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR1000D_CapitalGains.pdf",
+    "Itemized deductions (medical over 10% of AGI, real estate and personal property taxes, mortgage interest, contributions): 2025 AR3, https://www.dfa.arkansas.gov/wp-content/uploads/2025_AR3_ItemizedDeduction.pdf"
+  ],
+  "provisional": [
+    "Standard deduction $2,470 ($4,940 joint) is the 2025 amount; Arkansas indexes it and has not published 2026.",
+    "The $29 personal tax credits are the 2025 amount.",
+    "Bracket thresholds are the amounts written into HB 1001; the law indexes them yearly, so the 2026 tables could differ slightly (the 2026 withholding formula matches them)."
+  ],
+  "notes": [
+    "Couples who both have income can often pay less by filing separately on the same Arkansas return; this estimate uses joint filing.",
+    "Between $94,700 and $97,600 of taxable income Arkansas phases out its lower rates, shown here as a 13.6% bracket.",
+    "Arkansas's low-income tax tables are not included."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0], [5600, 0.02], [11200, 0.03], [16000, 0.034], [26400, 0.037], [94700, 0.136069], [97600, 0.037]],
+    "mfj": [[0, 0], [5600, 0.02], [11200, 0.03], [16000, 0.034], [26400, 0.037], [94700, 0.136069], [97600, 0.037]],
+    "mfs": [[0, 0], [5600, 0.02], [11200, 0.03], [16000, 0.034], [26400, 0.037], [94700, 0.136069], [97600, 0.037]],
+    "hoh": [[0, 0], [5600, 0.02], [11200, 0.03], [16000, 0.034], [26400, 0.037], [94700, 0.136069], [97600, 0.037]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 2470, "mfj": 4940, "mfs": 2470, "hoh": 2470 }
+  },
+  "itemized": {
+    "medicalFloorRate": 0.1,
+    "propertyTax": true,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": null
+  },
+  "credits": { "perFiler": 29, "perDependent": 29, "perSenior": 58 },
+  "capitalGains": {
+    "exclusionRate": 0.5
+  }
+}

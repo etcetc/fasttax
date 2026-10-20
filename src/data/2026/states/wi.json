@@ -1,0 +1,40 @@
+{
+  "state": "WI",
+  "name": "Wisconsin",
+  "year": 2026,
+  "dataYear": 2025,
+  "sources": [
+    "Wis. Stat. 71.06(1r), (2)(k) and Wisconsin DOR 2025 Tax Update (revenue.wi.gov/Documents/2025-Tax-Update-Three-Slides.pdf): 2025 brackets after 2025 Act 15; head of household uses the single schedule",
+    "Wis. Stat. 71.05(22)(dp), (dt) (docs.legis.wisconsin.gov): sliding standard deduction (single 12%, head of household 22.515% then single, joint and separate 19.778%), CPI-indexed",
+    "2025 maximum standard deductions $13,560 / $25,110 / $11,930 / $17,520 (TaxAct summary of 2025 Form 1 instructions; matches the statute indexed to August 2024 CPI)",
+    "Wisconsin 2025 Form 1 instructions (revenue.wi.gov/TaxForms2025/2025-Form1-Inst.pdf): $700 exemption per person, extra $250 for 65+",
+    "Wis. Stat. 71.05(6)(b)9; DOR 2025 Tax Update: 70% of net long-term capital gains is taxed (30% exclusion)"
+  ],
+  "provisional": [
+    "Tax brackets are 2025 amounts; 2026 brackets are indexed to inflation but not yet published.",
+    "Standard deduction maximums are 2025 amounts. Phase-out start points ($19,550 single and head of household, $28,210 joint, $13,390 separate) are computed from the statute's CPI indexing, not read from the published table.",
+    "The standard deduction phase-out is fitted as a straight line to zero (single $132,550, joint $155,169, separate $73,710); this is exact for single, joint and separate filers, but head of household is approximated (tax off by up to about $150). It is measured on federal AGI instead of Wisconsin AGI after the gains exclusion."
+  ],
+  "notes": [
+    "Wisconsin's itemized deduction credit and married couple credit are not included.",
+    "The retirement income subtraction for people 67 and older is not included."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.035], [14680, 0.044], [50480, 0.053], [323290, 0.0765]],
+    "mfj": [[0, 0.035], [19580, 0.044], [67300, 0.053], [431060, 0.0765]],
+    "mfs": [[0, 0.035], [9790, 0.044], [33650, 0.053], [215530, 0.0765]],
+    "hoh": [[0, 0.035], [14680, 0.044], [50480, 0.053], [323290, 0.0765]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 13560, "mfj": 25110, "mfs": 11930, "hoh": 17520 },
+    "phaseout": {
+      "start": { "single": 19550, "mfj": 28210, "mfs": 13390, "hoh": 19550 },
+      "end": { "single": 132550, "mfj": 155169, "mfs": 73710, "hoh": 132550 }
+    }
+  },
+  "exemptions": { "perFiler": 700, "perDependent": 700, "perSenior": 250 },
+  "capitalGains": {
+    "exclusionRate": 0.3
+  }
+}

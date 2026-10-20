@@ -1,0 +1,16 @@
+[
+  {
+    "description": "NC single, wages + interest",
+    "inputs": { "filingStatus": "single", "wages": 70750, "taxableInterest": 2000 },
+    "federal": { "agi": 72750, "taxableIncome": 56650, "incomeTax": 7175, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 2394.00,
+    "working": "Federal AGI 72,750. NC standard deduction (single) 12,750. No children. NC taxable = 60,000. 60,000 x 0.0399 = 2,394.00."
+  },
+  {
+    "description": "NC married joint, 2 children: NC itemized (mortgage + property tax under $20,000 limit, charitable) while federal takes standard, plus child deduction",
+    "inputs": { "filingStatus": "mfj", "wages": 100000, "taxableInterest": 3000, "qualifiedDividends": 2000, "longTermGains": 5000, "childrenUnder17": 2, "propertyTax": 6000, "mortgageInterest": 12000, "charitable": 9000 },
+    "federal": { "agi": 110000, "taxableIncome": 75800, "incomeTax": 3360, "standardDeduction": 32200, "itemizes": false },
+    "expectedStateTax": 3231.90,
+    "working": "Federal AGI 110,000. NC itemized: mortgage interest + property tax = 12,000 + 6,000 = 18,000 (under the $20,000 limit) + charitable 9,000 = 27,000 > standard 25,500, so itemize 27,000 (allowed although federal takes the standard deduction). Child deduction, G.S. 105-153.5(a1) MFJ, AGI $100,000-$120,000: 1,000 per child x 2 = 2,000. NC taxable = 110,000 - 27,000 - 2,000 = 81,000. 81,000 x 0.0399 = 3,231.90. (Federal: Schedule A 9,232 SALT + 12,000 + 8,450 = 29,682 < 32,200, standard; less $2,000 non-itemizer charitable -> taxable 75,800; tax 7,760 - child credit 4,400 = 3,360.)"
+  }
+]

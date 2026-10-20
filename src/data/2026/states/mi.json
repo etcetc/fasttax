@@ -1,0 +1,30 @@
+{
+  "state": "MI",
+  "name": "Michigan",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "2026 rate 4.25%: Michigan Treasury, 'State individual income tax rate for 2026 tax year determined', April 15, 2026 (michigan.gov/treasury/news/2026/04/15/state-individual-income-tax-rate-for-2026-tax-year-determined)",
+    "2026 personal exemption $5,900 (per filer and per dependent): Michigan Treasury, withholding 'Calendar Year Tax Information' (michigan.gov/taxes/business-taxes/withholding/calendar-year-tax-information)",
+    "Starts from federal AGI; no standard or itemized deduction; 2025 exemption $5,800: Michigan Treasury, 'Tax Year 2025 Information' (michigan.gov/taxes/iit/tax-guidance/tax-year-info/tax-year-2025-guidance)"
+  ],
+  "provisional": [
+    "2026 personal exemption ($5,900) is from Treasury's 2026 withholding information; the 2026 MI-1040 instructions are not yet published"
+  ],
+  "notes": [
+    "City income taxes (levied by some cities, including Detroit and Grand Rapids) are not included.",
+    "Senior deductions (the retirement subtraction, or $20,000/$40,000 for those 67 and older) and the refundable homestead property tax credit are not included."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.0425]],
+    "mfj": [[0, 0.0425]],
+    "mfs": [[0, 0.0425]],
+    "hoh": [[0, 0.0425]]
+  },
+  "exemptions": {
+    "perFiler": 5900,
+    "perDependent": 5900,
+    "perSenior": 0
+  }
+}

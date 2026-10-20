@@ -1,0 +1,26 @@
+{
+  "state": "LA",
+  "name": "Louisiana",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "Flat 3% rate, standard deduction indexed to CPI-U from 2026, personal and dependent exemptions repealed: Act 11 of 2024 Third Extraordinary Session; LDR Revenue Information Bulletin 25-012 (dam.ldr.la.gov/lawspolicies/RIB-25-012-Louisiana-Individual-Income-Tax-Reform-1.pdf)",
+    "2026 standard deduction $12,875 single/MFS, $25,750 MFJ/HoH/QSS: LDR RIB 26-005 Updated Withholding Tables (dam.ldr.la.gov/lawspolicies/RIB 26-005-Updated Withholding Tables.pdf); Form R-1210 (1/26) (dam.ldr.la.gov/taxforms/R-1210-1-26.pdf)",
+    "Computation starts from federal AGI, minus standard deduction, times 3%: 2025 IT-540 instructions, lines 7-11 (dam.ldr.la.gov/taxforms/IT540i-WEB-2025-Revised-7-26.pdf)",
+    "No rate change for 2026: 2026 Regular Session bills HB 253 and HB 411 deferred (houmatimes.com/?p=225408)"
+  ],
+  "provisional": [
+    "Standard deduction ($12,875 single/MFS, $25,750 MFJ/HoH) is LDR's estimate from CPI-U data available Dec 1, 2025; LDR says the final 2026 amount may differ slightly"
+  ],
+  "notes": [],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.03]],
+    "mfj": [[0, 0.03]],
+    "mfs": [[0, 0.03]],
+    "hoh": [[0, 0.03]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 12875, "mfj": 25750, "mfs": 12875, "hoh": 25750 }
+  }
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, interest and dividends, standard deduction",
+    "inputs": { "filingStatus": "single", "taxableInterest": 30000, "nonQualifiedDividends": 10000, "qualifiedDividends": 20000, "longTermGains": 15000 },
+    "federal": { "agi": 75000, "taxableIncome": 58900, "incomeTax": 4037.5, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 3308.125,
+    "working": "Federal: AGI 75,000 - 16,100 = 58,900 taxable; ordinary 23,900 -> 1,240 + 12% x 11,500 = 2,620; gains 35,000: 25,550 at 0% (to 49,450), 9,450 x 15% = 1,417.50; tax 4,037.50. Alabama (Form 40): AGI 75,000; federal tax deduction (line 12) 4,037.50; standard deduction at AGI 75,000 = 2,500 (chart minimum); personal exemption single 1,500; no dependents. Taxable = 75,000 - 4,037.50 - 2,500 - 1,500 = 66,962.50. Tax = 2% x 500 = 10 + 4% x 2,500 = 100 + 5% x 63,962.50 = 3,198.125 -> 3,308.125."
+  },
+  {
+    "description": "Joint, two children, large federal tax deduction, itemizes on Alabama only",
+    "inputs": { "filingStatus": "mfj", "taxableInterest": 100000, "nonQualifiedDividends": 20000, "qualifiedDividends": 30000, "longTermGains": 100000, "childrenUnder17": 2, "propertyTax": 5000, "mortgageInterest": 8000, "charitable": 3000 },
+    "federal": { "agi": 250000, "taxableIncome": 217800, "incomeTax": 23475, "standardDeduction": 32200, "itemizes": false },
+    "expectedStateTax": 10266.25,
+    "working": "Federal: AGI 250,000 - 32,200 = 217,800; ordinary 87,800 -> 2,480 + 12% x 63,000 = 10,040; gains 130,000: 11,100 at 0% (to 98,900), 118,900 x 15% = 17,835; regular tax 27,875 less child tax credit 2 x 2,200 = 23,475. NIIT: MAGI not above 250,000. Federal itemized 5,000 + ~10,266 AL tax + 8,000 + 3,000 - 1,250 floor = ~25,016 < 32,200, so federal standard. Alabama: AGI 250,000; federal tax deduction 23,475; Schedule A = 5,000 property tax + 8,000 mortgage interest + 3,000 gifts = 16,000 > 5,000 standard, so itemize 16,000 (no wages, so no FICA line); exemptions 3,000 (MFJ) + 2 dependents x 300 (AGI over 100,000) = 3,600. Taxable = 250,000 - 23,475 - 16,000 - 3,600 = 206,925. Tax (joint) = 2% x 1,000 = 20 + 4% x 5,000 = 200 + 5% x 200,925 = 10,046.25 -> 10,266.25."
+  }
+]

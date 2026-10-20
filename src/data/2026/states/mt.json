@@ -1,0 +1,39 @@
+{
+  "state": "MT",
+  "name": "Montana",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "MT DOR, 'HB 337' news release (revenue.mt.gov/news/recent-news/HB-337): 2026 rates 4.7% / 5.65%, thresholds $47,500 / $71,250 / $95,000; capital gains rates stay 3.0% / 4.1% with brackets matched to the ordinary thresholds",
+    "MT DOR, 2025 Tax Rates and Deductions: capital gains stacked on ordinary income; 65-and-over subtraction $5,660",
+    "MT DOR, Montana Tax Simplification Resource Hub and 2024 Tax Simplification webinar: starts from federal taxable income; net long-term capital gains as in IRC 1222, qualified dividends taxed as ordinary income"
+  ],
+  "provisional": [
+    "65-and-over subtraction is the 2025 amount ($5,660 per person); the 2026 inflation-adjusted figure is not published",
+    "Capital gains thresholds are inferred to equal the 2026 ordinary thresholds; the DOR says they match but does not list them"
+  ],
+  "notes": [
+    "Montana adds back the federal qualified business income deduction; this estimate does not, so it may be low for self-employed filers."
+  ],
+  "startingPoint": "federalTaxable",
+  "brackets": {
+    "single": [[0, 0.047], [47500, 0.0565]],
+    "mfj":    [[0, 0.047], [95000, 0.0565]],
+    "mfs":    [[0, 0.047], [47500, 0.0565]],
+    "hoh":    [[0, 0.047], [71250, 0.0565]]
+  },
+  "exemptions": {
+    "perFiler": 0,
+    "perDependent": 0,
+    "perSenior": 5660
+  },
+  "capitalGains": {
+    "schedule": {
+      "single": [[0, 0.03], [47500, 0.041]],
+      "mfj":    [[0, 0.03], [95000, 0.041]],
+      "mfs":    [[0, 0.03], [47500, 0.041]],
+      "hoh":    [[0, 0.03], [71250, 0.041]]
+    },
+    "includesQualifiedDividends": false
+  }
+}

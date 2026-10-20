@@ -1,0 +1,36 @@
+{
+  "state": "VT",
+  "name": "Vermont",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "Vermont GB-1210 2026 withholding tables (tax.vermont.gov/sites/tax/files/documents/GB-1210-2026.pdf): single and married 2026 bracket thresholds",
+    "Vermont Joint Fiscal Office, House Ways and Means testimony 4-23-2026 (legislature.vermont.gov, DR 26-0804): current-law TY2026 brackets for all four statuses; Tax Department presentation 4-15-2026: top bracket $312,050 joint for TY26",
+    "Vermont IN-111 2025 and instructions (tax.vermont.gov): standard deduction $7,650/$15,300/$11,450, $1,250 per 65+/blind box, $5,300 personal exemption",
+    "Vermont Schedule IN-153 2025: flat exclusion = lesser of net capital gain or $5,000; 40% exclusion excludes publicly traded stocks and bonds"
+  ],
+  "provisional": [
+    "Standard deduction ($7,650 single and separate, $15,300 joint, $11,450 head of household) and the $1,250 extra per person 65+ are 2025 amounts; 2026 indexed amounts are not yet published.",
+    "Personal exemption $5,300 is the 2025 amount (the 2026 withholding allowance is $5,400).",
+    "2026 brackets for head of household and married filing separately come from the Joint Fiscal Office; the Department's 2026 rate schedules are not yet published."
+  ],
+  "notes": [
+    "Vermont's charitable contribution credit (5% of gifts, up to $1,000) is not included.",
+    "Only the flat $5,000 capital gains exclusion is applied; the 40% exclusion for non-traded assets held over three years (such as a business or land) is not included."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.0335], [50750, 0.066], [122850, 0.076], [256300, 0.0875]],
+    "mfj": [[0, 0.0335], [84700, 0.066], [204750, 0.076], [312050, 0.0875]],
+    "mfs": [[0, 0.0335], [42350, 0.066], [102375, 0.076], [156025, 0.0875]],
+    "hoh": [[0, 0.0335], [68000, 0.066], [175500, 0.076], [284150, 0.0875]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 7650, "mfj": 15300, "mfs": 7650, "hoh": 11450 },
+    "seniorExtra": 1250
+  },
+  "exemptions": { "perFiler": 5300, "perDependent": 5300, "perSenior": 0 },
+  "capitalGains": {
+    "flatExclusion": 5000
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "year": 2026,
+  "sources": ["IRS Rev. Proc. 2025-32 (via pgcalc.com/insight-training/knowledge-base/tables/2026-tax-tables)", "One Big Beautiful Bill Act (P.L. 119-21): SALT cap, senior deduction, charitable rules, itemized-deduction limit", "SSA: 2026 Social Security wage base $184,500", "Rev. Proc. 2025-32 via catalyst-cpa.com: 2026 QBI thresholds and OBBBA phase-in ranges, $400 minimum deduction", "IRC 1401, 1402, 3101: self-employment and FICA rates; IRC 3101(b)(2): 0.9% Additional Medicare (thresholds not indexed)"],
+  "brackets": {
+    "single": [[0, 0.1], [12400, 0.12], [50400, 0.22], [105700, 0.24], [201775, 0.32], [256225, 0.35], [640600, 0.37]],
+    "mfj": [[0, 0.1], [24800, 0.12], [100800, 0.22], [211400, 0.24], [403550, 0.32], [512450, 0.35], [768700, 0.37]],
+    "mfs": [[0, 0.1], [12400, 0.12], [50400, 0.22], [105700, 0.24], [201775, 0.32], [256225, 0.35], [384350, 0.37]],
+    "hoh": [[0, 0.1], [17700, 0.12], [67450, 0.22], [105700, 0.24], [201750, 0.32], [256200, 0.35], [640600, 0.37]]
+  },
+  "capitalGains": {
+    "zeroRateTop": {
+      "single": 49450,
+      "mfj": 98900,
+      "mfs": 49450,
+      "hoh": 66200
+    },
+    "fifteenRateTop": {
+      "single": 545500,
+      "mfj": 613700,
+      "mfs": 306850,
+      "hoh": 579600
+    }
+  },
+  "standardDeduction": {
+    "single": 16100,
+    "mfj": 32200,
+    "mfs": 16100,
+    "hoh": 24150
+  },
+  "additionalStandardDeduction65": {
+    "unmarried": 2050,
+    "married": 1650
+  },
+  "seniorDeduction": {
+    "perPerson": 6000,
+    "phaseoutStart": {
+      "single": 75000,
+      "mfj": 150000,
+      "hoh": 75000
+    },
+    "phaseoutRate": 0.06,
+    "allowedForMfs": false
+  },
+  "medicalFloorRate": 0.075,
+  "salt": {
+    "cap": {
+      "single": 40400,
+      "mfj": 40400,
+      "mfs": 20200,
+      "hoh": 40400
+    },
+    "phaseoutStart": {
+      "single": 505000,
+      "mfj": 505000,
+      "mfs": 252500,
+      "hoh": 505000
+    },
+    "phaseoutRate": 0.3,
+    "floor": {
+      "single": 10000,
+      "mfj": 10000,
+      "mfs": 5000,
+      "hoh": 10000
+    }
+  },
+  "charitable": {
+    "itemizerFloorRate": 0.005,
+    "cashLimitRate": 0.6,
+    "nonItemizerMax": {
+      "single": 1000,
+      "mfj": 2000,
+      "mfs": 1000,
+      "hoh": 1000
+    }
+  },
+  "itemizedLimit": {
+    "comment": "IRC 68 as amended: reduce by 2/37 of the lesser of itemized deductions or taxable income above the start of the 37% bracket",
+    "fraction": 0.054054054054054
+  },
+  "childTaxCredit": {
+    "perChild": 2200,
+    "perOtherDependent": 500,
+    "phaseoutStart": {
+      "single": 200000,
+      "mfj": 400000,
+      "mfs": 200000,
+      "hoh": 200000
+    },
+    "reductionPer1000": 50,
+    "refundablePerChild": 1700,
+    "earnedIncomeFloor": 2500,
+    "refundableRate": 0.15
+  },
+  "niit": {
+    "rate": 0.038,
+    "threshold": {
+      "single": 200000,
+      "mfj": 250000,
+      "mfs": 125000,
+      "hoh": 200000
+    }
+  },
+  "payroll": {
+    "socialSecurityRate": 0.062,
+    "medicareRate": 0.0145,
+    "wageBase": 184500
+  },
+  "selfEmployment": {
+    "earningsFactor": 0.9235,
+    "socialSecurityRate": 0.124,
+    "medicareRate": 0.029,
+    "minimumNetEarnings": 400
+  },
+  "additionalMedicare": {
+    "rate": 0.009,
+    "threshold": {
+      "single": 200000,
+      "mfj": 250000,
+      "mfs": 125000,
+      "hoh": 200000
+    }
+  },
+  "qbi": {
+    "comment": "Modelled for a sole proprietor with no employees or business property, so above the threshold the deduction phases out the same way for every kind of business.",
+    "rate": 0.2,
+    "threshold": {
+      "single": 201750,
+      "mfj": 403500,
+      "mfs": 201775,
+      "hoh": 201750
+    },
+    "phaseInRange": {
+      "single": 75000,
+      "mfj": 150000,
+      "mfs": 75000,
+      "hoh": 75000
+    },
+    "minimumDeduction": 400,
+    "minimumQbi": 1000
+  }
+}

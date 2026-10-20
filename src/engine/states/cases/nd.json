@@ -1,0 +1,16 @@
+[
+  {
+    "description": "ND single, wages + interest",
+    "inputs": { "filingStatus": "single", "wages": 85000, "taxableInterest": 1000 },
+    "federal": { "agi": 86000, "taxableIncome": 69900, "incomeTax": 10090, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 396.34,
+    "working": "Starts from federal taxable income 69,900. No exclusions. 2026 ND-1ES single schedule, $49,575-$250,400: 0 + 0.0195 x (69,900 - 49,575) = 0.0195 x 20,325 = 396.3375 -> 396.34."
+  },
+  {
+    "description": "ND married joint: 40% exclusion of long-term gains and qualified dividends",
+    "inputs": { "filingStatus": "mfj", "wages": 150000, "taxableInterest": 5000, "qualifiedDividends": 20000, "longTermGains": 60000 },
+    "federal": { "agi": 235000, "taxableIncome": 202800, "incomeTax": 28440, "standardDeduction": 32200, "itemizes": false },
+    "expectedStateTax": 1716.00,
+    "working": "Federal taxable income 202,800. Exclusion (N.D.C.C. 57-38-30.3(2)(d); ND-1 lines 6 and 13): 0.40 x 60,000 + 0.40 x 20,000 = 24,000 + 8,000 = 32,000. ND taxable = 170,800. 2026 MFJ schedule, $82,800-$304,850: 0.0195 x (170,800 - 82,800) = 0.0195 x 88,000 = 1,716.00. (Federal: ordinary 122,800 -> 16,440; 80,000 gains at 15% = 12,000; total 28,440.)"
+  }
+]

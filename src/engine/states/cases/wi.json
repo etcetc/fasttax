@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, wages + interest: sliding standard deduction partly phased out",
+    "inputs": { "filingStatus": "single", "wages": 50000, "taxableInterest": 1000 },
+    "federal": { "agi": 51000, "taxableIncome": 34900, "incomeTax": 3940, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 1650.5,
+    "working": "Form 1: line 7 Wisconsin income = 51,000. Standard deduction (single, Wis. Stat. 71.05(22)(dp)1 indexed to 2025): 13,560 - 12% x (51,000 - 19,550) = 13,560 - 3,774 = 9,786. Exemption 1 x 700. Taxable income = 51,000 - 9,786 - 700 = 40,514. 2025 single schedule: 3.5% x 14,680 = 513.80; 4.4% x (40,514 - 14,680) = 4.4% x 25,834 = 1,136.70. Tax = 1,650.50 (the DOR tax table, used below 100,000, gives the row midpoint, a dollar or so different). Federal: 51,000 - 16,100 = 34,900; tax = 1,240 + 12% x 22,500 = 3,940."
+  },
+  {
+    "description": "Joint, wages + interest + qualified dividends + long-term gains: 30% long-term gain exclusion; standard deduction fully phased out",
+    "inputs": { "filingStatus": "mfj", "wages": 150000, "taxableInterest": 5000, "qualifiedDividends": 5000, "longTermGains": 50000 },
+    "federal": { "agi": 210000, "taxableIncome": 177800, "incomeTax": 24690, "standardDeduction": 32200, "itemizes": false },
+    "expectedStateTax": 9478.88,
+    "working": "Schedule WD/SB: 30% of net long-term gain 50,000 = 15,000 subtracted (qualified dividends get no exclusion). Wisconsin income = 210,000 - 15,000 = 195,000. Standard deduction (joint): 25,110 - 19.778% x (195,000 - 28,210) < 0, so 0 (also 0 measured on federal AGI). Exemptions 2 x 700 = 1,400. Taxable income = 195,000 - 1,400 = 193,600. 2025 joint schedule: 3.5% x 19,580 = 685.30; 4.4% x (67,300 - 19,580) = 2,099.68; 5.3% x (193,600 - 67,300) = 6,693.90. Tax = 9,478.88. Federal: TI = 210,000 - 32,200 = 177,800; ordinary part 122,800 -> 11,600 + 22% x 22,000 = 16,440; 55,000 of gains/dividends above the 98,900 0% top -> 15% = 8,250; tax 24,690; NIIT not part of income tax (and AGI under 250,000)."
+  }
+]

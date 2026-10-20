@@ -1,0 +1,42 @@
+{
+  "state": "KY",
+  "name": "Kentucky",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "Flat rate 3.5% for tax years beginning on or after Jan 1, 2026: 2025 HB 1 (Acts Ch. 1), KRS 141.020 (apps.legislature.ky.gov/record/25RS/HB1.html)",
+    "2026 standard deduction $3,360: Kentucky DOR news release, Sept 4, 2025 (revenue.ky.gov/News/Pages/Kentucky-DOR-Announces-2026-Standard-Deduction.aspx)",
+    "Itemized deductions limited to mortgage interest, charitable gifts and a few miscellaneous items, allowed whether or not you itemize federally: 2025 Kentucky Schedule A (revenue.ky.gov/Forms/740-NP Schedule A (2025).pdf); 2025 Form 740",
+    "$40 personal tax credit for each person 65+: Kentucky Schedule ITC, Section B (revenue.ky.gov/Forms/Schedule ITC 2023.pdf)"
+  ],
+  "provisional": [
+    "The $40 credit for each person 65 or older is from the 2023 Schedule ITC (fixed in statute, KRS 141.020)"
+  ],
+  "notes": [
+    "Local occupational license taxes on wages and self-employment income (commonly 1–2.5% in cities and counties) are not included.",
+    "Married couples who both have income can file separately on a combined return and each take the $3,360 standard deduction; this estimate uses one."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.035]],
+    "mfj": [[0, 0.035]],
+    "mfs": [[0, 0.035]],
+    "hoh": [[0, 0.035]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 3360, "mfj": 3360, "mfs": 3360, "hoh": 3360 }
+  },
+  "itemized": {
+    "medicalFloorRate": null,
+    "propertyTax": false,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": null,
+    "requiresFederalItemizing": false
+  },
+  "credits": {
+    "perFiler": 0,
+    "perDependent": 0,
+    "perSenior": 40
+  }
+}

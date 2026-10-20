@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, wages + interest: 2026 reduced rates, one $2,000 exemption",
+    "inputs": { "filingStatus": "single", "wages": 55000, "taxableInterest": 1000 },
+    "federal": { "agi": 56000, "taxableIncome": 39900, "incomeTax": 4540, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 1697.3,
+    "working": "IT-140: line 1 federal AGI 56,000; no modifications; line 4 = 56,000. Line 6 exemptions 1 x 2,000. Line 7 taxable income = 54,000. 11-21-4j schedule: over 40,000 but not over 60,000 -> 1,106.50 + 4.22% x (54,000 - 40,000) = 1,106.50 + 590.80 = 1,697.30. Federal: 56,000 - 16,100 = 39,900; tax = 1,240 + 12% x 27,500 = 4,540."
+  },
+  {
+    "description": "Joint, both 65+, wages + investment income: senior modification of $8,000 each, joint return uses the same schedule as single",
+    "inputs": { "filingStatus": "mfj", "wages": 40000, "taxableInterest": 20000, "qualifiedDividends": 15000, "longTermGains": 30000, "filer65": true, "spouse65": true },
+    "federal": { "agi": 105000, "taxableIncome": 57500, "incomeTax": 1250, "standardDeduction": 35500, "itemizes": false },
+    "expectedStateTax": 3095.5,
+    "working": "IT-140: federal AGI 105,000 (West Virginia gives no capital gains preference). Schedule M line 47 senior modification: each spouse 65+ has at least 8,000 of income not otherwise subtracted (no pension or Social Security subtractions), so 2 x 8,000 = 16,000. Line 4 West Virginia AGI = 89,000. Line 6 exemptions 2 x 2,000 = 4,000. Line 7 = 85,000. Schedule I (joint): over 60,000 -> 1,950.50 + 4.58% x 25,000 = 1,950.50 + 1,145.00 = 3,095.50. Federal: standard 32,200 + 2 x 1,650 = 35,500; senior deduction 2 x 6,000 = 12,000 (AGI under 150,000); TI = 105,000 - 35,500 - 12,000 = 57,500; ordinary part 12,500 -> 1,250; 45,000 of gains/dividends in the 0% band; tax 1,250."
+  }
+]

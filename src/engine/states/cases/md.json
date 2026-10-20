@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, wages and interest: standard deduction, one exemption, state brackets plus 3.2% county tax",
+    "inputs": { "filingStatus": "single", "wages": 85000, "taxableInterest": 1000 },
+    "federal": { "agi": 86000, "taxableIncome": 69900, "incomeTax": 10090, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 6259.8,
+    "working": "Form 502: FAGI = 86,000. Federal standard deduction taken, so Maryland standard deduction 3,400 (2026). Exemption: FAGI <= 100,000, so 3,200. Taxable net income = 86,000 - 3,400 - 3,200 = 79,400. State tax: 2% x 1,000 = 20; 3% x 1,000 = 30; 4% x 1,000 = 40; 4.75% x (79,400 - 3,000 = 76,400) = 3,629; total 3,719. Local tax (line 28): 79,400 x 3.2% = 2,540.80. Total = 6,259.80."
+  },
+  {
+    "description": "Joint filers, FAGI $600,000 with $100,000 of long-term gains: 2% capital gains surtax, exemptions gone, county tax",
+    "inputs": { "filingStatus": "mfj", "wages": 500000, "longTermGains": 100000 },
+    "federal": { "agi": 600000, "taxableIncome": 567800, "incomeTax": 117608, "standardDeduction": 32200, "itemizes": false },
+    "expectedStateTax": 52913.9,
+    "working": "FAGI = 600,000. Federal standard deduction taken, so Maryland standard deduction 6,800. Exemptions: FAGI over 200,000 (joint), so 0. Taxable net income = 600,000 - 6,800 = 593,200. State tax (joint schedule): 20 + 30 + 40 = 90; 4.75% x 147,000 = 6,982.50; 5% x 25,000 = 1,250; 5.25% x 50,000 = 2,625; 5.5% x 75,000 = 4,125; 5.75% x (593,200 - 300,000 = 293,200) = 16,859; total 31,931.50. Form 502CG: FAGI > 350,000, net capital gain 100,000 (no exclusions) x 2% = 2,000. Local tax: 593,200 x 3.2% = 18,982.40. Total = 31,931.50 + 2,000 + 18,982.40 = 52,913.90."
+  }
+]

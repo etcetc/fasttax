@@ -1,0 +1,26 @@
+{
+  "state": "WV",
+  "name": "West Virginia",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "W. Va. Code 11-21-4j (code.wvlegislature.gov/pdf/11-21-4j/): rates for taxable years beginning on or after Jan 1, 2026 (single, head of household and joint share one schedule; married filing separately uses half the thresholds)",
+    "West Virginia IT-140 2025 instructions (tax.wv.gov/Documents/PIT/2025/it140.PersonalIncomeTaxFormsAndInstructions.2025.pdf): starts from federal AGI; $2,000 per exemption; no standard or itemized deduction",
+    "West Virginia Schedule M 2025, line 47 (tax.wv.gov/Documents/PIT/2025/it140.Schedule-M.2025.pdf): senior citizen modification up to $8,000 per person 65+"
+  ],
+  "provisional": [
+    "The $2,000 exemption and $8,000 senior modification are statutory amounts from the 2025 forms; the 2026 forms are not yet published."
+  ],
+  "notes": [
+    "The senior deduction of up to $8,000 per person 65+ is limited to that person's own income and reduced by pension and Social Security subtractions; it is applied in full here.",
+    "The low-income earned income exclusion and family tax credit are not included."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.0211], [10000, 0.0281], [25000, 0.0316], [40000, 0.0422], [60000, 0.0458]],
+    "mfj": [[0, 0.0211], [10000, 0.0281], [25000, 0.0316], [40000, 0.0422], [60000, 0.0458]],
+    "mfs": [[0, 0.0211], [5000, 0.0281], [12500, 0.0316], [20000, 0.0422], [30000, 0.0458]],
+    "hoh": [[0, 0.0211], [10000, 0.0281], [25000, 0.0316], [40000, 0.0422], [60000, 0.0458]]
+  },
+  "exemptions": { "perFiler": 2000, "perDependent": 2000, "perSenior": 8000 }
+}

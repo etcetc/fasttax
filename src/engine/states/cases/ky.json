@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, wages and interest, standard deduction",
+    "inputs": { "filingStatus": "single", "wages": 55000, "taxableInterest": 500 },
+    "federal": { "agi": 55500, "taxableIncome": 39400, "incomeTax": 4480, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 1824.9,
+    "working": "Form 740: Kentucky AGI = federal AGI 55,500. Line 10 standard deduction 3,360 (2026). Line 11 taxable income = 55,500 - 3,360 = 52,140. Tax = 52,140 x 3.5% = 1,824.90. No personal tax credits."
+  },
+  {
+    "description": "Single 65+: Kentucky itemizes only mortgage interest and charity (no property tax or medical); $40 age-65 credit",
+    "inputs": { "filingStatus": "single", "wages": 30000, "taxableInterest": 4000, "qualifiedDividends": 12000, "longTermGains": 20000, "filer65": true, "medical": 8000, "propertyTax": 5000, "mortgageInterest": 2000, "charitable": 2500 },
+    "federal": { "agi": 66000, "taxableIncome": 41850, "incomeTax": 985, "standardDeduction": 18150, "itemizes": false },
+    "expectedStateTax": 2112.5,
+    "working": "Form 740: Kentucky AGI = 30,000 + 4,000 + 12,000 + 20,000 = 66,000. Schedule A: mortgage interest 2,000 + contributions 2,500 = 4,500 (property tax and medical have no line on Kentucky Schedule A); 4,500 > standard 3,360, so itemize. Taxable = 66,000 - 4,500 = 61,500. Tax = 61,500 x 3.5% = 2,152.50. Schedule ITC personal credit for age 65: 40. Tax = 2,152.50 - 40 = 2,112.50. (Federal: standard 16,100 + 2,050 = 18,150 plus 6,000 senior deduction; taxable 41,850, of which 32,000 gains/dividends at 0%; tax 10% x 9,850 = 985.)"
+  }
+]

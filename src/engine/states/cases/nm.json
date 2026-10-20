@@ -1,0 +1,16 @@
+[
+  {
+    "description": "NM single, wages + interest",
+    "inputs": { "filingStatus": "single", "wages": 60000, "taxableInterest": 1500 },
+    "federal": { "agi": 61500, "taxableIncome": 45400, "incomeTax": 5200, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 1724.80,
+    "working": "Federal AGI 61,500. Federal standard deduction 16,100. NM taxable = 45,400. NMSA 7-2-7(B) single, $33,500-$66,500: 1,165.50 + 0.047 x (45,400 - 33,500) = 1,165.50 + 559.30 = 1,724.80. (Rate schedule, not the $100-band PIT-1 tax table.)"
+  },
+  {
+    "description": "NM married joint with long-term gains: capital gains deduction capped at $2,500",
+    "inputs": { "filingStatus": "mfj", "wages": 120000, "qualifiedDividends": 5000, "longTermGains": 40000 },
+    "federal": { "agi": 165000, "taxableIncome": 132800, "incomeTax": 15125, "standardDeduction": 32200, "itemizes": false },
+    "expectedStateTax": 5573.70,
+    "working": "Federal AGI 165,000. Net capital gain deduction (NMSA 7-2-34, 2025+) = min(40,000, 2,500) = 2,500 (qualified dividends are not net capital gain). 165,000 - 2,500 = 162,500. Federal standard deduction 32,200. NM taxable = 130,300. NMSA 7-2-7(A) MFJ, $100,000-$315,000: 4,089 + 0.049 x 30,300 = 4,089 + 1,484.70 = 5,573.70. (Federal: ordinary 87,800 -> 10,040; 11,100 of gains at 0%, 33,900 at 15% = 5,085; total 15,125.)"
+  }
+]

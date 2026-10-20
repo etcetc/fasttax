@@ -1,0 +1,46 @@
+{
+  "state": "NC",
+  "name": "North Carolina",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "Rate 3.99% for tax years after 2025: G.S. 105-153.7(a) — https://ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_105/GS_105-153.7.html; 2026 NC-30 — https://www.ncdor.gov/income-tax-withholding-tables-and-instructions-employers/open; later cuts start 2027 (EY Tax News 2026-1630)",
+    "Standard deduction, itemized deductions ($20,000 combined limit on mortgage interest and property tax; charitable and medical as allowed federally) and child deduction table: G.S. 105-153.5 — https://NCleg.net/EnactedLegislation/Statutes/PDF/BySection/Chapter_105/GS_105-153.5.pdf",
+    "NC itemizing independent of the federal choice; no 65+ addition: NCDOR — https://www.ncdor.gov/taxes-forms/individual-income-tax/filing-topics/north-carolina-standard-deduction-or-north-carolina-itemized-deductions"
+  ],
+  "provisional": [
+    "Child deduction ($3,000 per child, stepping down $500 per AGI band) is modelled as a straight-line phaseout through the band midpoints (exact at each band's midpoint, within $250 per child elsewhere), and is also applied to other dependents although NC allows it only for children qualifying for the federal child tax credit",
+    "The $20,000 combined limit on mortgage interest plus property tax is applied to property tax only; married filing separately uses $10,000 assuming spouses pay equal shares",
+    "Charitable gifts are deducted in full; whether NC adopts the federal 0.5%-of-AGI floor for 2026 depends on NC's IRC conformity update, not confirmed"
+  ],
+  "notes": [
+    "North Carolina limits mortgage interest plus property tax to $20,000 combined; this estimate caps only the property tax, so it can understate tax when the two together exceed $20,000."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.0399]],
+    "mfj": [[0, 0.0399]],
+    "mfs": [[0, 0.0399]],
+    "hoh": [[0, 0.0399]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 12750, "mfj": 25500, "mfs": 12750, "hoh": 19125 }
+  },
+  "itemized": {
+    "medicalFloorRate": 0.075,
+    "propertyTax": true,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": { "single": 20000, "mfj": 20000, "mfs": 10000, "hoh": 20000 },
+    "requiresFederalItemizing": false
+  },
+  "exemptions": {
+    "perFiler": 0,
+    "perDependent": 3000,
+    "perSenior": 0,
+    "phaseout": {
+      "start": { "single": 15000, "mfj": 30000, "mfs": 15000, "hoh": 22500 },
+      "end": { "single": 75000, "mfj": 150000, "mfs": 75000, "hoh": 112500 }
+    }
+  }
+}

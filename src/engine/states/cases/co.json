@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, wages and interest, flat 4.4% on federal taxable income",
+    "inputs": { "filingStatus": "single", "wages": 70000, "taxableInterest": 1225 },
+    "federal": { "agi": 71225, "taxableIncome": 55125, "incomeTax": 6839.5, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 2425.50,
+    "working": "DR 0104 line 1 federal taxable income 55,125. Federal AGI under 300,000, so no line 4 deduction addback; no other additions or subtractions. 2026 rate 4.4% (DR 0104EP 2026 worksheet): 55,125 x 4.4% = 2,425.50 (also the midpoint of a $50 tax-table band). (Federal: 71,225 - 16,100 = 55,125; 1,240 + 12% x 38,000 = 4,560; 22% x 4,725 = 1,039.50; total 6,839.50.)"
+  },
+  {
+    "description": "Married joint, both 65+, gains and dividends taxed at the flat rate; federal senior deduction flows through",
+    "inputs": { "filingStatus": "mfj", "wages": 60000, "taxableInterest": 5025, "qualifiedDividends": 15000, "longTermGains": 40000, "filer65": true, "spouse65": true },
+    "federal": { "agi": 120025, "taxableIncome": 72525, "incomeTax": 1752.5, "standardDeduction": 35500, "itemizes": false },
+    "expectedStateTax": 3191.10,
+    "working": "Federal taxable 72,525 = AGI 120,025 - standard 35,500 (32,200 + 2 x 1,650) - senior deduction 2 x 6,000 (MAGI under 150,000). DR 0104 line 1 = 72,525; AGI under 300,000 so no addback; Colorado has no capital gains preference for stock. 72,525 x 4.4% = 3,191.10. (Federal: ordinary 72,525 - 55,000 = 17,525 x 10% = 1,752.50; 55,000 of gains and qualified dividends all under the 98,900 0% threshold.)"
+  }
+]

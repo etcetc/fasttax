@@ -1,0 +1,35 @@
+{
+  "state": "IL",
+  "name": "Illinois",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "Rate 4.95%: 35 ILCS 5/201(b); IL-1040 Instructions 2025 (tax.illinois.gov, R-02/25)",
+    "Exemption $2,925 per exemption for 2026: Illinois DOR FAQ 851 (tax.illinois.gov/questionsandanswers/851.html)",
+    "Additional $1,000 exemption for 65+ and the $250,000 / $500,000 federal-AGI limit on the exemption allowance: IL-1040 Instructions 2025, Line 10"
+  ],
+  "provisional": [
+    "Additional $1,000 exemption for each person 65 or older is taken from the 2025 IL-1040 instructions (fixed in statute, not indexed)",
+    "No exemption allowance above federal AGI of $250,000 ($500,000 married filing jointly): taken from the 2025 IL-1040 instructions"
+  ],
+  "notes": [
+    "Illinois's 5% credit for property tax paid on your home (Schedule ICR) is not included."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.0495]],
+    "mfj": [[0, 0.0495]],
+    "mfs": [[0, 0.0495]],
+    "hoh": [[0, 0.0495]]
+  },
+  "exemptions": {
+    "perFiler": 2925,
+    "perDependent": 2925,
+    "perSenior": 1000,
+    "phaseout": {
+      "basis": "federalAgi",
+      "start": { "single": 250000, "mfj": 500000, "mfs": 250000, "hoh": 250000 },
+      "end": { "single": 250001, "mfj": 500001, "mfs": 250001, "hoh": 250001 }
+    }
+  }
+}

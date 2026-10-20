@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, wages and interest: one personal exemption, flat 4.25%",
+    "inputs": { "filingStatus": "single", "wages": 55000, "taxableInterest": 500 },
+    "federal": { "agi": 55500, "taxableIncome": 39400, "incomeTax": 4480, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 2108,
+    "working": "MI-1040: federal AGI = 55,500. Exemption: 1 x 5,900 (2026) = 5,900. Taxable = 55,500 - 5,900 = 49,600. Tax = 49,600 x 4.25% = 2,108."
+  },
+  {
+    "description": "Joint filers with three dependents and investment income: each dependent gets a full exemption, gains taxed at 4.25%",
+    "inputs": { "filingStatus": "mfj", "wages": 150000, "qualifiedDividends": 5000, "longTermGains": 20000, "childrenUnder17": 2, "otherDependents": 1 },
+    "federal": { "agi": 175000, "taxableIncome": 142800, "incomeTax": 14190, "standardDeduction": 32200, "itemizes": false },
+    "expectedStateTax": 6183.75,
+    "working": "Federal AGI = 150,000 + 5,000 + 20,000 = 175,000. Exemptions: 2 filers + 3 dependents = 5 x 5,900 = 29,500 (no phase-out). Taxable = 175,000 - 29,500 = 145,500. Tax = 145,500 x 4.25% = 6,183.75."
+  }
+]

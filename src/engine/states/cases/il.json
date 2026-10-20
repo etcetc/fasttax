@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, wages and interest, one exemption",
+    "inputs": { "filingStatus": "single", "wages": 85000, "taxableInterest": 1500 },
+    "federal": { "agi": 86500, "taxableIncome": 70400, "incomeTax": 10200, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 4136.9625,
+    "working": "IL-1040: line 1 federal AGI = 85,000 + 1,500 = 86,500 (no additions/subtractions) -> base income 86,500. Line 10 exemption allowance: AGI 86,500 <= 250,000, so 1 x $2,925 (2026 amount) = 2,925. Line 11 net income = 86,500 - 2,925 = 83,575. Line 12 tax = 83,575 x 4.95% = 4,136.9625."
+  },
+  {
+    "description": "Married filing jointly over $500,000 AGI: exemption allowance lost entirely, including two children",
+    "inputs": { "filingStatus": "mfj", "wages": 430000, "qualifiedDividends": 30000, "longTermGains": 60000, "childrenUnder17": 2 },
+    "federal": { "agi": 520000, "taxableIncome": 487800, "incomeTax": 94168, "standardDeduction": 32200, "itemizes": false },
+    "expectedStateTax": 25740,
+    "working": "IL-1040: line 1 federal AGI = 430,000 + 30,000 + 60,000 = 520,000 -> base income 520,000. Line 10: filing jointly with federal AGI 520,000 > 500,000, so exemption allowance = 0 (would otherwise be 4 x 2,925 = 11,700). Line 11 net income = 520,000. Line 12 tax = 520,000 x 4.95% = 25,740. (Federal: taxable 520,000 - 32,200 = 487,800; ordinary 397,800 taxes 80,668, 90,000 of gains/dividends at 15% = 13,500; child credit fully phased out above 400,000 + 88,000.)"
+  }
+]

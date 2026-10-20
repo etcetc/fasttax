@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, AGI $42,000: personal exemption partly phased out and 10% personal tax credit",
+    "inputs": { "filingStatus": "single", "wages": 38000, "taxableInterest": 1500, "qualifiedDividends": 2500 },
+    "federal": { "agi": 42000, "taxableIncome": 25900, "incomeTax": 2560, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 1354.50,
+    "working": "CT Tax Calculation Schedule (2025 tables): line 1 CT AGI 42,000. Table A: 42,000 exceeds 30,000 by 12 x 1,000 -> exemption 15,000 - 12,000 = 3,000. Line 3 taxable 39,000. Table B: 200 + 4.5% x 29,000 = 1,505. Table C (starts 56,500) and D (starts 105,000): 0. Line 7 = 1,505. Table E for 33,300-60,000: .10 -> credit 150.50. Tax = 1,354.50. [Model: deduction 15,000 - (42,000 - 30,000) = 3,000; brackets 1,505; flat credit 150 -> 1,355.00, within $1.] (Federal: 42,000 - 16,100 = 25,900; ordinary 23,400 -> 1,240 + 12% x 11,000 = 2,560; dividends at 0%.)"
+  },
+  {
+    "description": "Married joint, AGI $250,000: full 2% phase-out add-back and first-tier recapture, gains taxed as ordinary income",
+    "inputs": { "filingStatus": "mfj", "wages": 180000, "taxableInterest": 10000, "qualifiedDividends": 20000, "longTermGains": 40000 },
+    "federal": { "agi": 250000, "taxableIncome": 217800, "incomeTax": 33140, "standardDeduction": 32200, "itemizes": false },
+    "expectedStateTax": 13200.00,
+    "working": "CT Tax Calculation Schedule (2025 tables), MFJ: CT AGI 250,000; Table A exemption 0 (over 71,000). Taxable 250,000. Table B: 9,500 + 6% x 50,000 = 12,500. Table C: AGI over 145,500 -> maximum 500. Table D: 250,000 exceeds 210,000 by 4 x 10,000 -> 4 x 50 = 200. Line 7 = 13,200. Table E: 0 (over 100,500). Tax = 13,200. [Model brackets: 2% x 20,000 = 400; 4.5% x 80,000 = 3,600; 5.5% x 500 = 27.50; 6.5% x 50,000 = 3,250; 5.5% x 49,500 = 2,722.50; 6% x 10,000 = 600; 6.5% x 40,000 = 2,600; total 13,200.] (Federal: 250,000 - 32,200 = 217,800; ordinary 157,800 -> 2,480 + 9,120 + 22% x 57,000 = 24,140; 60,000 at 15% = 9,000; total 33,140.)"
+  }
+]

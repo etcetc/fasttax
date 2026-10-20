@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, wages and interest, standard deduction and one exemption",
+    "inputs": { "filingStatus": "single", "wages": 65000, "taxableInterest": 1500 },
+    "federal": { "agi": 66500, "taxableIncome": 50400, "incomeTax": 5800, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 1876.88,
+    "working": "RI-1040: federal AGI 66,500, no modifications. Standard deduction (single, 2026) 11,200; below 261,000 so no phase-out. Exemptions 1 x 5,250. Taxable = 66,500 - 11,200 - 5,250 = 50,050. 2026 schedule: not over 82,050 -> 3.75% x 50,050 = 1,876.875 -> 1,876.88. (Federal: 66,500 - 16,100 = 50,400; 1,240 + 12% x 38,000 = 4,560 -> 5,800.)"
+  },
+  {
+    "description": "Married with two children, AGI $272,920: standard deduction and exemptions phased to 60%",
+    "inputs": { "filingStatus": "mfj", "wages": 240000, "taxableInterest": 6000, "qualifiedDividends": 10000, "nonQualifiedDividends": 2920, "longTermGains": 14000, "childrenUnder17": 2 },
+    "federal": { "agi": 272920, "taxableIncome": 240720, "incomeTax": 36408.8, "standardDeduction": 32200, "itemizes": false },
+    "expectedStateTax": 11655.64,
+    "working": "RI-1040: modified federal AGI 272,920. Standard deduction worksheet: 272,920 > 261,000; excess 11,920 (not over 29,800); 11,920 / 7,450 = 1.6, rounded up to 2 -> 60%. Standard deduction 22,400 x 0.60 = 13,440. Exemption worksheet: 4 x 5,250 = 21,000, same 60% -> 12,600. [A smooth phase-out from 261,000 to 290,800 gives 1 - 11,920/29,800 = 60% at this AGI too.] Taxable = 272,920 - 13,440 - 12,600 = 246,880. 2026 schedule: over 186,450 -> 8,035.88 + 5.99% x 60,430 = 8,035.88 + 3,619.76 = 11,655.64. (Federal: taxable 272,920 - 32,200 = 240,720; ordinary 216,720: 2,480 + 9,120 + 22% x 110,600 = 24,332 + 24% x 5,320 = 1,276.80 -> 37,208.80; gains/qualified dividends 15% x 24,000 = 3,600; 40,808.80 less child tax credit 4,400 = 36,408.80.)"
+  }
+]

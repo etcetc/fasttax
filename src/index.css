@@ -1,0 +1,51 @@
+@import '@fontsource-variable/public-sans';
+@import 'tailwindcss';
+
+/* Tokens. Paper-and-ink palette borrowed from printed tax forms. */
+@theme {
+  --font-sans: 'Public Sans Variable', system-ui, sans-serif;
+  --color-paper: #f2f5f3;
+  --color-sheet: #ffffff;
+  --color-ink: #1b2a2f;
+  --color-ink-soft: #55666b;
+  --color-rule: #c9d6d0;
+  --color-field: #f7faf8;
+  --color-owed: #1f4f99;
+  --color-state: #6a8fd0;
+  --color-kept: #d9e4df;
+  --color-credit: #2f7d5b;
+  --color-alert: #b3261e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-paper: #12181b;
+    --color-sheet: #1a2226;
+    --color-ink: #e6eeeb;
+    --color-ink-soft: #9fb0ab;
+    --color-rule: #2e3a3e;
+    --color-field: #141b1e;
+    --color-owed: #7fa6ea;
+    --color-state: #4d6ea8;
+    --color-kept: #2a3539;
+    --color-credit: #6cc49b;
+    --color-alert: #f2a199;
+  }
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-owed);
+  outline-offset: 2px;
+}
+
+input[type='number'] { appearance: textfield; -moz-appearance: textfield; }
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }

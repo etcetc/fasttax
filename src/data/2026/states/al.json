@@ -1,0 +1,40 @@
+{
+  "state": "AL",
+  "name": "Alabama",
+  "year": 2026,
+  "dataYear": 2025,
+  "sources": [
+    "Rates (2%/4%/5%; joint brackets doubled): Alabama DOR, https://www.revenue.alabama.gov/faqs/what-is-alabamas-individual-income-tax-rate/",
+    "Personal exemptions ($1,500 single/MFS, $3,000 MFJ/head of family) and Schedule A (medical over 4% of AGI, real estate and personal property taxes, mortgage interest, gifts): 2025 Form 40, https://www.revenue.alabama.gov/wp-content/uploads/2026/01/25f40.pdf",
+    "Dependent exemption ($1,000 to AGI $50,000; $500 to $100,000; $300 above) and federal income tax deduction (line 12): 2025 Form 40 booklet, https://www.revenue.alabama.gov/wp-content/uploads/2026/01/25f40bk.pdf",
+    "Standard deduction chart (minimums $2,500 single/MFS/head of family, $5,000 MFJ): https://www.revenue.alabama.gov/wp-content/uploads/2026/01/25stddeduction40nr.pdf",
+    "2025 bills to raise the standard deduction (HB389) and retiree exclusion (HB388) not enacted: https://alabamaretail.org/?p=31163; 2026's only income tax change is an overtime deduction (HB527): https://256today.com/state-rep-lomax-op-ed-alabamas-four-year-record-of-tax-relief/"
+  ],
+  "provisional": [
+    "All amounts come from 2025 Alabama forms. Alabama's rates, exemptions and standard deduction are set in statute and not indexed, and no 2026 change to them was found."
+  ],
+  "notes": [
+    "Alabama lets itemizers also deduct Social Security and Medicare taxes on wages; that is not included, so wage earners' estimates may run a few hundred dollars high.",
+    "Uses Alabama's standard deduction for incomes above about $35,500; lower incomes get up to $3,500 more.",
+    "Local occupational taxes (such as Birmingham's 1% of wages) are not included."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.02], [500, 0.04], [3000, 0.05]],
+    "mfj": [[0, 0.02], [1000, 0.04], [6000, 0.05]],
+    "mfs": [[0, 0.02], [500, 0.04], [3000, 0.05]],
+    "hoh": [[0, 0.02], [500, 0.04], [3000, 0.05]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 2500, "mfj": 5000, "mfs": 2500, "hoh": 2500 }
+  },
+  "itemized": {
+    "medicalFloorRate": 0.04,
+    "propertyTax": true,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": null
+  },
+  "exemptions": { "perFiler": 1500, "perDependent": 300, "perSenior": 0 },
+  "federalTaxDeduction": { "share": 1, "cap": null }
+}

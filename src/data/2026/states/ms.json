@@ -1,0 +1,38 @@
+{
+  "state": "MS",
+  "name": "Mississippi",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "MS DOR, Individual Income Tax General Information (dor.ms.gov/general-information): 0% on the first $10,000 of taxable income, exemptions, standard deductions, each spouse taxed separately",
+    "MS H.B. 1 (2025 Reg. Sess.), via EY Tax News 2025-0936: 4.00% rate for tax year 2026",
+    "MS DOR Form 80-108 (2023): itemized deductions follow federal Schedule A, medical above 7.5% of AGI, state income tax removed, no requirement to itemize federally"
+  ],
+  "provisional": [],
+  "notes": [
+    "Mississippi taxes each spouse separately; joint returns assume each spouse has at least $10,000 of taxable income."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0], [10000, 0.04]],
+    "mfj":    [[0, 0], [20000, 0.04]],
+    "mfs":    [[0, 0], [10000, 0.04]],
+    "hoh":    [[0, 0], [10000, 0.04]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 2300, "mfj": 4600, "mfs": 2300, "hoh": 3400 }
+  },
+  "itemized": {
+    "medicalFloorRate": 0.075,
+    "propertyTax": true,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": null,
+    "requiresFederalItemizing": false
+  },
+  "exemptions": {
+    "perFiler": 6000,
+    "perDependent": 1500,
+    "perSenior": 1500
+  }
+}

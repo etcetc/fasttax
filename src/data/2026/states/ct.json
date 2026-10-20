@@ -1,0 +1,42 @@
+{
+  "state": "CT",
+  "name": "Connecticut",
+  "year": 2026,
+  "dataYear": 2025,
+  "sources": [
+    "CT DRS, 2025 Form CT-1040 Tax Calculation Schedule (portal.ct.gov/-/media/drs/forms/2025/income/ct-1040-tcs_1225.pdf): Table A personal exemptions $15,000 / $24,000 / $12,000 / $19,000 less $1,000 per $1,000 of CT AGI over $30,000 / $48,000 / $24,000 / $38,000; Table B rates 2%-6.99%; Table C 2% rate phase-out add-back; Table D recapture; Table E personal tax credit decimals",
+    "CT DRS, 2025 Form CT-1040 instructions (portal.ct.gov/-/media/drs/forms/2025/income/2025-ct-1040-instructions_1225.pdf): Tax Calculation Schedule lines 1-10, CT AGI less exemption, tax = (B + C + D) x (1 - Table E decimal)",
+    "CT DRS, 2025 and 2026 State Tax Developments, income tax (portal.ct.gov/drs/miscellaneous-taxes/other-tax-page/state-tax-developments): no change to rates, brackets, exemptions, phase-out, recapture or personal credit for 2026"
+  ],
+  "provisional": [
+    "All rates, the personal exemption, the 2% phase-out add-back, the recapture and the personal tax credit are the 2025 tables; Connecticut does not index them and no 2026 change was enacted, but the 2026 schedule is not yet published"
+  ],
+  "notes": [
+    "The 2% rate phase-out and the benefit recapture are built into the brackets, so rates above about $56,500 (single) / $100,500 (joint) are effective rates and rise smoothly rather than in $25-$180 steps (within about $180 of the real tables).",
+    "The personal exemption is shown as the standard deduction, and the personal tax credit (1%-75% of tax at lower incomes) is approximated as $150 per filer, so results below about $64,500 single / $100,500 joint can be off by up to about $120 (single) or $250 (joint).",
+    "The property tax credit (up to $300) and the pension, IRA and Social Security subtractions are not included."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.02], [10000, 0.045], [50000, 0.055], [56500, 0.06], [100000, 0.065], [105000, 0.07], [106500, 0.065], [155000, 0.06], [200000, 0.083], [250000, 0.087], [350000, 0.069], [500000, 0.0799], [545000, 0.0699]],
+    "mfj":    [[0, 0.02], [20000, 0.045], [100000, 0.055], [100500, 0.065], [150500, 0.055], [200000, 0.06], [210000, 0.065], [310000, 0.06], [400000, 0.083], [500000, 0.087], [700000, 0.069], [1000000, 0.0799], [1090000, 0.0699]],
+    "mfs":    [[0, 0.02], [10000, 0.045], [50000, 0.055], [50250, 0.065], [75250, 0.055], [100000, 0.06], [105000, 0.065], [155000, 0.06], [200000, 0.083], [250000, 0.087], [350000, 0.069], [500000, 0.0799], [545000, 0.0699]],
+    "hoh":    [[0, 0.02], [16000, 0.045], [78500, 0.055], [80000, 0.065], [118500, 0.055], [160000, 0.06], [168000, 0.065], [248000, 0.06], [320000, 0.0825], [400000, 0.0865], [560000, 0.069], [800000, 0.0799], [872000, 0.0699]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 15000, "mfj": 24000, "mfs": 12000, "hoh": 19000 },
+    "phaseout": {
+      "start": { "single": 30000, "mfj": 48000, "mfs": 24000, "hoh": 38000 },
+      "ratePerDollar": 1
+    }
+  },
+  "credits": {
+    "perFiler": 150,
+    "perDependent": 0,
+    "perSenior": 0,
+    "phaseout": {
+      "start": { "single": 60000, "mfj": 96000, "mfs": 48000, "hoh": 74000 },
+      "end": { "single": 64500, "mfj": 100500, "mfs": 52500, "hoh": 78500 }
+    }
+  }
+}

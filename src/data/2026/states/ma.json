@@ -1,0 +1,47 @@
+{
+  "state": "MA",
+  "name": "Massachusetts",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "5.0% rate on wages, interest, dividends and long-term gains; 4% surtax on income over $1,107,750 for 2026: Mass. DOR, 'Massachusetts Tax Rates' (mass.gov/info-details/massachusetts-tax-rates)",
+    "Personal exemptions ($4,400 single/MFS, $6,800 HoH, $8,800 MFJ), $1,000 per dependent: 2025 Form 1, lines 2a-2b (mass.gov/doc/2025-form-1-massachusetts-resident-income-tax-return/download); Mass. DOR 'Personal Income Tax Exemptions'",
+    "Age 65+ exemption $700 per person: Mass. DOR '2025 TaxTips for Seniors and Retirees' (mass.gov/doc/dor-tax-tips-for-seniors-and-retirees/download)",
+    "Charitable contribution deduction restored from tax year 2023 (G.L. c. 62 §3(B)(a)(13)), claimed on Schedule Y without federal itemizing; TIR 24-14"
+  ],
+  "provisional": [
+    "Age 65+ exemption: DOR's 2025 TaxTips and exemptions page give $700, but the 2024-2025 Form 1 line 2c reads '$1,700' as extracted; $700 used"
+  ],
+  "notes": [
+    "The refundable Child and Family Tax Credit ($440 per child under 13 or dependent 65+) and the senior circuit breaker credit are not included.",
+    "Massachusetts' deduction for Social Security and Medicare paid on wages (up to $2,000 per worker) is not included."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.05]],
+    "mfj": [[0, 0.05]],
+    "mfs": [[0, 0.05]],
+    "hoh": [[0, 0.05]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 0, "mfj": 0, "mfs": 0, "hoh": 2400 }
+  },
+  "itemized": {
+    "medicalFloorRate": null,
+    "propertyTax": false,
+    "mortgageInterest": false,
+    "charitable": true,
+    "saltCap": null
+  },
+  "exemptions": {
+    "perFiler": 4400,
+    "perDependent": 1000,
+    "perSenior": 700
+  },
+  "surtax": {
+    "threshold": { "single": 1107750, "mfj": 1107750, "mfs": 1107750, "hoh": 1107750 },
+    "rate": 0.04,
+    "base": "taxable",
+    "label": "4% surtax on income over $1,107,750"
+  }
+}

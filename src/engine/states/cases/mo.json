@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, wages and interest; federal tax deduction at 15%",
+    "inputs": { "filingStatus": "single", "wages": 70000, "taxableInterest": 5000 },
+    "federal": { "agi": 75000, "taxableIncome": 58900, "incomeTax": 7670, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 2533.73,
+    "working": "MO AGI 75,000. Federal tax deduction (MO-1040 lines 11-13): 75,000 is in $50,001-$100,000, so 15% x 7,670 = 1,150.50 (under the $5,000 cap). Standard deduction = federal 16,100. MO taxable = 75,000 - 1,150.50 - 16,100 = 57,749.50. 2026 chart: over 9,436 -> $263 + 4.7% x (57,749.50 - 9,436) = 263 + 2,270.7345 = 2,533.73. (Chart bases are rounded to whole dollars; exact bracket arithmetic gives 262.86 + 2,270.7345 = 2,533.59.)"
+  },
+  {
+    "description": "Married joint with $150,000 long-term gains fully subtracted; Missouri AGI over $125,000 so no federal tax deduction",
+    "inputs": { "filingStatus": "mfj", "wages": 160000, "taxableInterest": 6000, "qualifiedDividends": 4000, "longTermGains": 150000 },
+    "federal": { "agi": 320000, "taxableIncome": 287800, "incomeTax": 41960, "standardDeduction": 32200, "itemizes": false },
+    "expectedStateTax": 6115.62,
+    "working": "Federal AGI 320,000. Capital gains subtraction (MO-A line 18, 100% of federally reported gains): 150,000; qualified dividends are not gains. MO AGI = 170,000 > 125,000, so federal tax deduction 0%. Standard deduction = federal 32,200. MO taxable = 170,000 - 32,200 = 137,800. A separate tax is computed for each spouse on their income-percentage share; with each share above 9,436 (e.g. 60/40: 82,680 and 55,120): 2 x 263 + 4.7% x (137,800 - 2 x 9,436) = 526 + 4.7% x 118,928 = 526 + 5,589.616 = 6,115.62. (Exact bracket arithmetic: 525.72 + 5,589.616 = 6,115.34.) (Federal: ordinary 133,800 -> 2,480 + 9,120 + 33,000 x 22% = 18,860; 154,000 preferential x 15% = 23,100; total 41,960.)"
+  }
+]

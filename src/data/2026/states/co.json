@@ -1,0 +1,25 @@
+{
+  "state": "CO",
+  "name": "Colorado",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "CO DOR, 2026 Form DR 0104EP Estimated Tax Worksheet line 2: 'Estimated 2026 Colorado income tax - 4.4% of line 1' (tax.colorado.gov/sites/default/files/documents/DR_0104EP_2026.pdf)",
+    "CO DOR, 2025 Book 104 (tax.colorado.gov/sites/default/files/documents/Book104_2025.pdf): line 1 is federal taxable income (Form 1040 line 15); line 4 addback of the federal standard or itemized deduction above $12,000 (single, head of household, married filing separately) / $16,000 (joint) when federal AGI exceeds $300,000; line 3 QBI addback above $500,000 / $1,000,000 AGI",
+    "CO DOR, Individual Income Tax Guide, January 2026 (tax.colorado.gov/sites/default/files/documents/Individual_Income_Tax_Guide_January_2026.pdf): rate 4.25% (2024), 4.4% (2025); deduction addback limits fall to $1,000 single / $2,000 joint for 2026 and later; overtime deduction added back from 2026; no addback for qualified tips"
+  ],
+  "provisional": [
+    "The 4.4% rate is the 2026 statutory rate used on the 2026 estimated-tax worksheet; a temporary TABOR rate reduction for 2026, if the state's revenue certification triggers one, is not reflected"
+  ],
+  "notes": [
+    "When federal AGI is over $300,000, Colorado adds back nearly all of the federal standard or itemized deduction (all but $1,000 single / $2,000 joint) and, above $500,000 / $1,000,000, the QBI deduction; this estimate does not, so it is low for those households.",
+    "Colorado's pension and Social Security subtraction for retirees and the TABOR refund are not included."
+  ],
+  "startingPoint": "federalTaxable",
+  "brackets": {
+    "single": [[0, 0.044]],
+    "mfj":    [[0, 0.044]],
+    "mfs":    [[0, 0.044]],
+    "hoh":    [[0, 0.044]]
+  }
+}

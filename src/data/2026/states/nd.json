@@ -1,0 +1,29 @@
+{
+  "state": "ND",
+  "name": "North Dakota",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "2026 tax rate schedules (all four statuses): Form ND-1ES 2026 — https://www.tax.nd.gov/sites/www/files/documents/forms/individual/2025-iit/28709-form-nd-1es-2026.pdf",
+    "Starting point federal taxable income; subtractions for net long-term capital gain exclusion (line 6) and qualified dividend exclusion (line 13): 2025 Form ND-1 — https://www.tax.nd.gov/sites/www/files/documents/forms/individual/2025-iit/28702-form-nd-1-2025.pdf",
+    "40% of net long-term capital gain and 40% of qualified dividends (IRC 1(h)(11)) excluded: N.D.C.C. 57-38-30.3(2)(d) — https://codes.findlaw.com/nd/title-57-taxation/nd-cent-code-sect-57-38-30-3/",
+    "No 2025 session rate changes; federal H.R. 1 changes flow through federal taxable income: ND Tax Commissioner 2025 legislative recap — https://simplebooklet.com/2025incometaxandwithholdingtax?textonly=1"
+  ],
+  "provisional": [
+    "40% exclusion of qualified dividends taken from the statute text as compiled in 2024 and the 2025 ND-1 line 13; 2026 ND-1 instructions not yet published"
+  ],
+  "notes": [
+    "North Dakota's marriage penalty credit for two-earner married couples is not included."
+  ],
+  "startingPoint": "federalTaxable",
+  "brackets": {
+    "single": [[0, 0], [49575, 0.0195], [250400, 0.025]],
+    "mfj": [[0, 0], [82800, 0.0195], [304850, 0.025]],
+    "mfs": [[0, 0], [41400, 0.0195], [152425, 0.025]],
+    "hoh": [[0, 0], [66400, 0.0195], [277600, 0.025]]
+  },
+  "capitalGains": {
+    "exclusionRate": 0.4,
+    "includesQualifiedDividends": true
+  }
+}

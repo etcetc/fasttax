@@ -1,0 +1,16 @@
+[
+  {
+    "description": "GA single, wages + interest, flat 4.99% after $15,000 standard deduction",
+    "inputs": { "filingStatus": "single", "wages": 64000, "taxableInterest": 1000 },
+    "federal": { "agi": 65000, "taxableIncome": 48900, "incomeTax": 5620, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 2495,
+    "working": "GA AGI = federal AGI = 65,000. 2026 standard deduction (HB 463) single 15,000 -> taxable 50,000. Tax 4.99% x 50,000 = 2,495."
+  },
+  {
+    "description": "GA head of household with one child: $5,000 dependent exemption; Georgia itemized deductions exceed the GA standard deduction but the federal return takes the standard deduction, so Georgia must too",
+    "inputs": { "filingStatus": "hoh", "wages": 89000, "taxableInterest": 1000, "childrenUnder17": 1, "mortgageInterest": 12000, "propertyTax": 3500 },
+    "federal": { "agi": 90000, "taxableIncome": 65850, "incomeTax": 5348, "standardDeduction": 24150, "itemizes": false },
+    "expectedStateTax": 3493,
+    "working": "GA AGI = 90,000. Georgia itemized would be 3,500 property (under $10,000 limit) + 12,000 mortgage = 15,500 > 15,000 GA standard, but federal Schedule A (6,993 SALT incl. GA tax + 12,000 = 18,993) is below the 24,150 federal HoH standard deduction, so the federal return does not itemize and IT-511 then requires the Georgia standard deduction: 15,000. Dependent exemption 1 x $5,000 = 5,000. Taxable 90,000 - 15,000 - 5,000 = 70,000. Tax 4.99% x 70,000 = 3,493."
+  }
+]

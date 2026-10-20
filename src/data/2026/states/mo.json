@@ -1,0 +1,49 @@
+{
+  "state": "MO",
+  "name": "Missouri",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "MO DOR 2026 withholding formula (as published in USDA NFC bulletin 2026/1773783048): 2026 rate chart, 0% to 4.7% with brackets every $1,348; standard deduction equals the 2026 federal amounts",
+    "MO DOR Form MO-1040 (2025): federal income tax deduction chart (35/25/15/5/0% by Missouri AGI, cap $5,000 or $10,000 combined); a separate tax is computed for each spouse",
+    "MO DOR Form MO-A (2025) Part 2: itemize only if itemized federally; federal Schedule A less state and local income taxes",
+    "MO DOR Capital Gains Subtraction FAQs (dor.mo.gov/faq/taxation/individual/capital-gains-subtraction.html): 100% of federally reported capital gains subtracted (H.B. 594, 2025)"
+  ],
+  "provisional": [
+    "2026 brackets are from the DOR's 2026 withholding formula; the 2026 MO-1040 rate chart is not out yet",
+    "Property-tax cap uses the 2026 federal SALT cap ($40,400; $20,200 married filing separately) without its phase-down above $505,000 of income"
+  ],
+  "notes": [
+    "Missouri's federal tax deduction is sized by Missouri income after the capital gains subtraction; here it uses federal AGI, so it may be slightly low for households with large gains."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0], [1348, 0.02], [2696, 0.025], [4044, 0.03], [5392, 0.035], [6740, 0.04], [8088, 0.045], [9436, 0.047]],
+    "mfj":    [[0, 0], [2696, 0.02], [5392, 0.025], [8088, 0.03], [10784, 0.035], [13480, 0.04], [16176, 0.045], [18872, 0.047]],
+    "mfs":    [[0, 0], [1348, 0.02], [2696, 0.025], [4044, 0.03], [5392, 0.035], [6740, 0.04], [8088, 0.045], [9436, 0.047]],
+    "hoh":    [[0, 0], [1348, 0.02], [2696, 0.025], [4044, 0.03], [5392, 0.035], [6740, 0.04], [8088, 0.045], [9436, 0.047]]
+  },
+  "standardDeduction": {
+    "amount": "federal"
+  },
+  "itemized": {
+    "medicalFloorRate": 0.075,
+    "propertyTax": true,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": { "single": 40400, "mfj": 40400, "mfs": 20200, "hoh": 40400 },
+    "requiresFederalItemizing": true
+  },
+  "capitalGains": {
+    "exclusionRate": 1,
+    "includesQualifiedDividends": false
+  },
+  "federalTaxDeduction": {
+    "share": 0.35,
+    "cap": { "single": 5000, "mfj": 10000, "mfs": 5000, "hoh": 5000 },
+    "phaseout": {
+      "start": { "single": 0, "mfj": 0, "mfs": 0, "hoh": 0 },
+      "end":   { "single": 131250, "mfj": 131250, "mfs": 131250, "hoh": 131250 }
+    }
+  }
+}

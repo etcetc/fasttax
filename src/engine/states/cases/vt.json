@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, wages + interest: Vermont standard deduction and exemption, crosses into the 6.6% bracket",
+    "inputs": { "filingStatus": "single", "wages": 70000, "taxableInterest": 2000 },
+    "federal": { "agi": 72000, "taxableIncome": 55900, "incomeTax": 7010, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 2247.93,
+    "working": "IN-111: line 1 federal AGI 72,000; line 3 = 72,000. Line 4 standard deduction (single) 7,650. Line 5e exemption 1 x 5,300. Line 7 Vermont taxable income = 72,000 - 7,650 - 5,300 = 59,050. 2026 single schedule: 3.35% x 50,750 = 1,700.125; 6.6% x (59,050 - 50,750) = 6.6% x 8,300 = 547.80. Tax = 2,247.93 (the Vermont tax table, used below 75,000, would give the $50-row midpoint value, a dollar or two different). Federal: 72,000 - 16,100 = 55,900; tax = 5,800 + 22% x (55,900 - 50,400) = 7,010."
+  },
+  {
+    "description": "Joint, wages + interest + qualified dividends + long-term gains: flat $5,000 capital gains exclusion (stock gains do not qualify for the 40% exclusion)",
+    "inputs": { "filingStatus": "mfj", "wages": 100000, "taxableInterest": 1000, "qualifiedDividends": 4000, "longTermGains": 20000 },
+    "federal": { "agi": 125000, "taxableIncome": 92800, "incomeTax": 7760, "standardDeduction": 32200, "itemizes": false },
+    "expectedStateTax": 3457.85,
+    "working": "Schedule IN-153: net capital gain 20,000 (qualified dividends are not capital gain); flat exclusion = lesser of 20,000 or 5,000 = 5,000; percentage exclusion = 0 (gains are on publicly traded stock); limit 40% x federal taxable income 92,800 = 37,120, so exclusion = 5,000. IN-111: line 1 federal AGI 125,000, line 2 net subtraction 5,000, line 3 = 120,000. Line 4 standard deduction (joint) 15,300. Line 5e exemptions 2 x 5,300 = 10,600. Line 7 = 120,000 - 15,300 - 10,600 = 94,100. 2026 joint schedule: 3.35% x 84,700 = 2,837.45; 6.6% x (94,100 - 84,700) = 6.6% x 9,400 = 620.40. Tax = 3,457.85. Minimum tax does not apply (AGI under 150,000). Federal: TI = 125,000 - 32,200 = 92,800; ordinary part 68,800 -> 2,480 + 12% x 44,000 = 7,760; 24,000 of gains and qualified dividends all in the 0% band (top 98,900); tax 7,760."
+  }
+]

@@ -1,0 +1,59 @@
+{
+  "state": "OR",
+  "name": "Oregon",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "2026 tax rate charts S and J, standard deduction $2,900 / $5,800 / $4,650, personal exemption credit $260 (none above federal AGI $100,000 single/MFS, $200,000 joint/HoH), federal tax subtraction maximum $8,750: Oregon DOR Publication OR-ESTIMATE 2026 (oregon.gov/dor/forms/FormsPubs/publication-or-estimate_101-026_2026.pdf)",
+    "Federal tax subtraction phaseout (federal AGI $125,000-$145,000 single/MFS, $250,000-$290,000 joint/HoH, in 20% steps), MFS maximum at half, 65+ additional standard deduction: 2025 Form OR-40 instructions, Table 4 and line 16 (taxsim.nber.org/historical_state_tax_forms/OR/2025/233803.pdf, Oregon DOR rev. 01-29-26)",
+    "Itemized deductions allowed regardless of federal choice; medical over 7.5% of AGI; state and local taxes capped as federally; Oregon income tax excluded: 2025 Schedule OR-A instructions (taxsim.nber.org/historical_state_tax_forms/OR/2025/schedule-or-a-inst_101-007-1_2025.pdf)"
+  ],
+  "provisional": [
+    "Federal tax subtraction phaseout income ranges are the 2025 figures (statutory, not indexed)",
+    "Married filing separately federal tax subtraction maximum $4,375 is inferred as half of the 2026 $8,750, as in 2025 ($4,250 of $8,500)",
+    "65+ additional standard deduction $1,000 per person is the 2025 amount for married filers; single and head-of-household filers get $1,200",
+    "Property tax cap assumes Oregon follows the 2026 federal SALT cap of $40,400 ($20,200 MFS); the federal reduction above $505,000 income is not applied"
+  ],
+  "notes": [
+    "Portland-area Metro and Multnomah County income taxes and the statewide transit tax on wages are not included.",
+    "Oregon phases out the federal tax subtraction in 20% steps; this estimate phases it out smoothly."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.0475], [4550, 0.0675], [11400, 0.0875], [125000, 0.099]],
+    "mfj": [[0, 0.0475], [9100, 0.0675], [22800, 0.0875], [250000, 0.099]],
+    "mfs": [[0, 0.0475], [4550, 0.0675], [11400, 0.0875], [125000, 0.099]],
+    "hoh": [[0, 0.0475], [9100, 0.0675], [22800, 0.0875], [250000, 0.099]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 2900, "mfj": 5800, "mfs": 2900, "hoh": 4650 },
+    "seniorExtra": 1000
+  },
+  "itemized": {
+    "medicalFloorRate": 0.075,
+    "propertyTax": true,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": { "single": 40400, "mfj": 40400, "mfs": 20200, "hoh": 40400 },
+    "requiresFederalItemizing": false
+  },
+  "credits": {
+    "perFiler": 260,
+    "perDependent": 260,
+    "perSenior": 0,
+    "phaseout": {
+      "basis": "federalAgi",
+      "start": { "single": 100000, "mfj": 200000, "mfs": 100000, "hoh": 200000 },
+      "end": { "single": 100001, "mfj": 200001, "mfs": 100001, "hoh": 200001 }
+    }
+  },
+  "federalTaxDeduction": {
+    "share": 1,
+    "cap": { "single": 8750, "mfj": 8750, "mfs": 4375, "hoh": 8750 },
+    "phaseout": {
+      "basis": "federalAgi",
+      "start": { "single": 125000, "mfj": 250000, "mfs": 125000, "hoh": 250000 },
+      "end": { "single": 145000, "mfj": 290000, "mfs": 145000, "hoh": 290000 }
+    }
+  }
+}

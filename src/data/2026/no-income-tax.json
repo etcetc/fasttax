@@ -1,0 +1,19 @@
+{
+  "year": 2026,
+  "comment": "States with no individual income tax on wages, interest, dividends, or capital gains in 2026.",
+  "sources": [
+    "Tax Foundation, State Individual Income Tax Rates and Brackets, 2026",
+    "NH DRA: Interest and Dividends Tax repealed for taxable periods beginning on or after January 1, 2025",
+    "TN DOR: Hall Income Tax repealed for tax years beginning on or after January 1, 2021"
+  ],
+  "states": {
+    "AK": "Alaska",
+    "FL": "Florida",
+    "NV": "Nevada",
+    "NH": "New Hampshire",
+    "SD": "South Dakota",
+    "TN": "Tennessee",
+    "TX": "Texas",
+    "WY": "Wyoming"
+  }
+}

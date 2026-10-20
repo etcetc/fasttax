@@ -1,0 +1,38 @@
+{
+  "state": "UT",
+  "name": "Utah",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "2026 S.B. 60: rate cut from 4.5% to 4.45%, retroactive to Jan 1, 2026 (house.utleg.gov/taxes; EY Tax News 2026-1045)",
+    "Utah Code 59-10-1018 (taxpayer tax credit) as amended by 2026 H.B. 77: 6% of federal standard deduction (or itemized less state income tax) plus 6% of the personal exemption, reduced by 1.3% of Utah taxable income above the base amount",
+    "Utah TC-40 2025 (files.tax.utah.gov/tax/forms/current/tc-40.pdf), lines 10-20: $2,111 personal exemption per dependent, 6% credit, 1.3% phase-out",
+    "Utah Pub 14 withholding, effective June 2026 (via USDA NFC bulletin help.nfc.usda.gov/bulletins/2026/1782763921.htm): exempt wages $9,348 single / $18,696 married, used to derive the 2026 base amounts",
+    "Credit per filer = 6% x 2026 federal standard deduction $16,100 (src/data/2026/federal.json); per senior = 6% x $1,650 federal 65+ add-on"
+  ],
+  "provisional": [
+    "Credit phase-out base amounts ($18,696 single/MFS, $37,392 joint, $28,045 head of household) are derived from the Tax Commission's June 2026 withholding tables; the 2026 TC-40 is not yet published.",
+    "The dependent exemption inside the credit ($2,111, so $126.66 of credit per dependent) is the 2025 amount; the 2026 indexed amount is not yet published.",
+    "The 65+ part of the credit uses the married federal add-on ($1,650 x 6% = $99); unmarried filers actually get 6% of $2,050 ($123)."
+  ],
+  "notes": [
+    "Utah's taxpayer credit is figured on the single-filer federal standard deduction; head-of-household filers and those who itemize federally may owe up to about $500 less.",
+    "Utah's child tax credit and its retirement and Social Security credits are not included."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.0445]],
+    "mfj": [[0, 0.0445]],
+    "mfs": [[0, 0.0445]],
+    "hoh": [[0, 0.0445]]
+  },
+  "credits": {
+    "perFiler": 966,
+    "perDependent": 126.66,
+    "perSenior": 99,
+    "phaseout": {
+      "start": { "single": 18696, "mfj": 37392, "mfs": 18696, "hoh": 28045 },
+      "ratePerDollar": 0.013
+    }
+  }
+}

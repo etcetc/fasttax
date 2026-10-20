@@ -1,0 +1,42 @@
+{
+  "state": "SC",
+  "name": "South Carolina",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "2026 law (H.4216, signed March 30, 2026): starts from federal AGI; 1.99% up to $30,000 and 5.21% above for all filing statuses; federal standard and itemized deductions repealed; SC Income Adjusted Deduction $15,000 single/MFS, $22,500 HoH, $30,000 joint, reduced proportionally over federal AGI $40,000-$95,000 / $60,000-$142,500 / $80,000-$190,000; other SC deductions retained: SC Revenue and Fiscal Affairs Office fiscal impact statement (scstatehouse.gov/sess126_2025-2026/fiscalimpactstatements/H4216%202026-03-30%20signed.pdf); bill text (scstatehouse.gov/sess126_2025-2026/prever/4216_20260224.htm); SCDOR Individual Income Tax page (dor.sc.gov/iit)",
+    "44% net capital gain deduction (long-term gains only) and age-65 deduction of up to $15,000 per person: SCDOR IIT FAQs (dor.sc.gov/iit/prepare-you-file/iit-faqs); SC Code 12-6-1150, 12-6-1140",
+    "Dependent exemption $4,930 (2025): SCDOR Individual Income Tax page (dor.sc.gov/iit)"
+  ],
+  "provisional": [
+    "Dependent exemption $4,930 is the 2025 amount; the indexed 2026 amount was not found"
+  ],
+  "notes": [
+    "From 2026 South Carolina no longer allows the federal standard or itemized deductions; it uses its own income-adjusted deduction.",
+    "The extra deduction for children under 6 and the two-wage-earner credit are not included."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.0199], [30000, 0.0521]],
+    "mfj": [[0, 0.0199], [30000, 0.0521]],
+    "mfs": [[0, 0.0199], [30000, 0.0521]],
+    "hoh": [[0, 0.0199], [30000, 0.0521]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 15000, "mfj": 30000, "mfs": 15000, "hoh": 22500 },
+    "phaseout": {
+      "basis": "federalAgi",
+      "start": { "single": 40000, "mfj": 80000, "mfs": 40000, "hoh": 60000 },
+      "end": { "single": 95000, "mfj": 190000, "mfs": 95000, "hoh": 142500 }
+    }
+  },
+  "exemptions": {
+    "perFiler": 0,
+    "perDependent": 4930,
+    "perSenior": 15000
+  },
+  "capitalGains": {
+    "exclusionRate": 0.44,
+    "includesQualifiedDividends": false
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "state": "RI",
+  "name": "Rhode Island",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "2026 rate schedule (one schedule for all filing statuses), standard deduction $11,200 / $22,400 / $16,800, exemption $5,250, phase-out of both over modified federal AGI $261,000-$290,800 in $7,450 steps: RI Division of Taxation Advisory ADV 2025-22 (tax.ri.gov/sites/g/files/xkgbur541/files/2025-11/ADV_2025_22_Inflation_Adjustments.pdf)",
+    "Phase-out worksheet mechanics (20% per step) and no itemized deductions: 2025 RI-1040 Tax Rate and Worksheets (tax.ri.gov/sites/g/files/xkgbur541/files/2026-01/2025%20Tax%20Rate%20and%20Worksheets.pdf)",
+    "Millionaires' surtax (1% from 2027) does not apply to 2026: EY Tax News 2026-1486"
+  ],
+  "provisional": [],
+  "notes": [
+    "Rhode Island phases out the standard deduction and exemptions in 20% steps between $261,000 and $290,800; this estimate phases them out smoothly."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.0375], [82050, 0.0475], [186450, 0.0599]],
+    "mfj": [[0, 0.0375], [82050, 0.0475], [186450, 0.0599]],
+    "mfs": [[0, 0.0375], [82050, 0.0475], [186450, 0.0599]],
+    "hoh": [[0, 0.0375], [82050, 0.0475], [186450, 0.0599]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 11200, "mfj": 22400, "mfs": 11200, "hoh": 16800 },
+    "phaseout": {
+      "basis": "federalAgi",
+      "start": { "single": 261000, "mfj": 261000, "mfs": 261000, "hoh": 261000 },
+      "end": { "single": 290800, "mfj": 290800, "mfs": 290800, "hoh": 290800 }
+    }
+  },
+  "exemptions": {
+    "perFiler": 5250,
+    "perDependent": 5250,
+    "perSenior": 0,
+    "phaseout": {
+      "basis": "federalAgi",
+      "start": { "single": 261000, "mfj": 261000, "mfs": 261000, "hoh": 261000 },
+      "end": { "single": 290800, "mfj": 290800, "mfs": 290800, "hoh": 290800 }
+    }
+  }
+}

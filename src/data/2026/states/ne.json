@@ -1,0 +1,43 @@
+{
+  "state": "NE",
+  "name": "Nebraska",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "NE DOR 2026 Tax Calculation Schedule, Form 8-460-2026 (draft as of 8/17/2026): brackets; the third and fourth brackets are both 4.55% in 2026",
+    "NE DOR Form 1040N (2026, draft as of 8/17/2026): standard deduction $8,850 / $17,700 / $8,850 / $12,950; personal exemption credit $176 per exemption; itemized = federal Schedule A less state and local income taxes",
+    "NE DOR 2025 Individual Income Tax Booklet: 65-or-blind standard deduction chart; itemize only if itemized federally"
+  ],
+  "provisional": [
+    "2026 brackets, standard deduction and $176 exemption credit come from draft forms",
+    "65-and-over add-on is the 2025 married amount ($1,650 per person); 2025 single/head-of-household filers got $2,000, and 2026 amounts are not published",
+    "Property-tax cap uses the 2026 federal SALT cap ($40,400; $20,200 married filing separately)"
+  ],
+  "notes": [
+    "Nebraska subtracts all state income tax from the federal SALT-capped total, so above about $505,000 of income the property-tax deduction may be smaller than shown."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.0246], [4130, 0.0351], [24760, 0.0455]],
+    "mfj":    [[0, 0.0246], [8250, 0.0351], [49530, 0.0455]],
+    "mfs":    [[0, 0.0246], [4130, 0.0351], [24760, 0.0455]],
+    "hoh":    [[0, 0.0246], [7700, 0.0351], [39620, 0.0455]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 8850, "mfj": 17700, "mfs": 8850, "hoh": 12950 },
+    "seniorExtra": 1650
+  },
+  "itemized": {
+    "medicalFloorRate": 0.075,
+    "propertyTax": true,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": { "single": 40400, "mfj": 40400, "mfs": 20200, "hoh": 40400 },
+    "requiresFederalItemizing": true
+  },
+  "credits": {
+    "perFiler": 176,
+    "perDependent": 176,
+    "perSenior": 0
+  }
+}

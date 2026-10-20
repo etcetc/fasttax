@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, wages and interest: full federal tax subtraction and $260 exemption credit",
+    "inputs": { "filingStatus": "single", "wages": 70000, "taxableInterest": 1000 },
+    "federal": { "agi": 71000, "taxableIncome": 54900, "incomeTax": 6790, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 4785.13,
+    "working": "OR-40: federal AGI 71,000. Federal tax subtraction: federal tax 6,790, below the 2026 maximum 8,750 and AGI under 125,000, so 6,790. Income after subtractions = 71,000 - 6,790 = 64,210. Standard deduction (single) 2,900. Taxable = 61,310. 2026 Chart S: over 11,400 -> 678 + 8.75% x (61,310 - 11,400 = 49,910) = 678 + 4,367.13 = 5,045.13. Personal exemption credit: 1 x 260 (AGI <= 100,000). Tax = 5,045.13 - 260 = 4,785.13. (Applying the rates without the chart's rounded base gives 5,045.63, i.e. 4,785.63.) (Federal: 71,000 - 16,100 = 54,900; 1,240 + 12% x 38,000 = 4,560 + 22% x 4,500 = 990 -> 6,790.)"
+  },
+  {
+    "description": "Married, AGI $258,000: federal tax subtraction capped and phased to 80%; no exemption credit above $200,000",
+    "inputs": { "filingStatus": "mfj", "wages": 230000, "taxableInterest": 4000, "qualifiedDividends": 6000, "longTermGains": 18000 },
+    "federal": { "agi": 258000, "taxableIncome": 225800, "incomeTax": 37420, "standardDeduction": 32200, "itemizes": false },
+    "expectedStateTax": 20817,
+    "working": "OR-40: federal AGI = 230,000 + 4,000 + 6,000 + 18,000 = 258,000. Federal tax subtraction: federal tax 37,420, limited to 8,750; Table 4 (joint, AGI 250,000-260,000) allows 80% = 7,000 (2025 table: 6,800 of 8,500). [A smooth phaseout from 250,000 to 290,000 also gives 1 - 8,000/40,000 = 80% at this AGI.] Income after subtraction = 258,000 - 7,000 = 251,000. Standard deduction (joint) 5,800. Taxable = 245,200. 2026 Chart J: over 22,800 -> 1,357 + 8.75% x (245,200 - 22,800 = 222,400) = 1,357 + 19,460 = 20,817. Personal exemption credit: federal AGI 258,000 > 200,000, so 0. Tax = 20,817. (Federal: taxable 258,000 - 32,200 = 225,800; ordinary 201,800: 2,480 + 9,120 + 22% x 101,000 = 22,220 -> 33,820; gains/dividends 15% x 24,000 = 3,600; 37,420. NIIT excluded.)"
+  }
+]

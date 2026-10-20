@@ -1,0 +1,55 @@
+{
+  "state": "CA",
+  "year": 2026,
+  "sources": ["FTB Tax News, Oct 2026, '2026 Indexing' (brackets, standard deduction, personal and dependent credits)", "FTB 2025 Form 540 booklet and Schedule CA instructions (phaseout thresholds, itemized limit, senior credit)", "EDD: 2026 SDI withholding rate 1.3%, no wage cap since 2024"],
+  "provisional": ["Exemption-credit phaseout and itemized-limit thresholds are 2025 values; FTB publishes 2026 in late December", "Senior credit assumed equal to the 2026 personal credit ($158); 2025 was $153"],
+  "brackets": {
+    "single": [[0, 0.01], [11456, 0.02], [27157, 0.04], [42861, 0.06], [59498, 0.08], [75197, 0.093], [384109, 0.103], [460927, 0.113], [768213, 0.123]],
+    "mfj": [[0, 0.01], [22912, 0.02], [54314, 0.04], [85722, 0.06], [118996, 0.08], [150394, 0.093], [768218, 0.103], [921854, 0.113], [1536426, 0.123]],
+    "mfs": [[0, 0.01], [11456, 0.02], [27157, 0.04], [42861, 0.06], [59498, 0.08], [75197, 0.093], [384109, 0.103], [460927, 0.113], [768213, 0.123]],
+    "hoh": [[0, 0.01], [22927, 0.02], [54316, 0.04], [70018, 0.06], [86654, 0.08], [102356, 0.093], [522385, 0.103], [626864, 0.113], [1044771, 0.123]]
+  },
+  "standardDeduction": {
+    "single": 5900,
+    "mfj": 11800,
+    "mfs": 5900,
+    "hoh": 11800
+  },
+  "personalCredit": 158,
+  "personalCreditCount": {
+    "single": 1,
+    "mfj": 2,
+    "mfs": 1,
+    "hoh": 1
+  },
+  "seniorCredit": 158,
+  "dependentCredit": 491,
+  "highIncomeThreshold": {
+    "single": 252203,
+    "mfj": 504411,
+    "mfs": 252203,
+    "hoh": 378310
+  },
+  "creditPhaseout": {
+    "stepSize": {
+      "single": 2500,
+      "mfj": 2500,
+      "mfs": 1250,
+      "hoh": 2500
+    },
+    "reductionPerStep": 6
+  },
+  "itemizedLimit": {
+    "excessRate": 0.06,
+    "maxShare": 0.8
+  },
+  "medicalFloorRate": 0.075,
+  "charitableLimitRate": 0.5,
+  "behavioralHealthTax": {
+    "threshold": 1000000,
+    "rate": 0.01
+  },
+  "sdi": {
+    "rate": 0.013
+  }
+}

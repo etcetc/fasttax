@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, wages and interest, standard deduction",
+    "inputs": { "filingStatus": "single", "wages": 60000, "taxableInterest": 1000 },
+    "federal": { "agi": 61000, "taxableIncome": 44900, "incomeTax": 5140, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 2199.5,
+    "working": "Form 511: federal AGI 61,000 (no adjustments). Standard deduction (single) 6,350. Exemptions 1 x 1,000 = 1,000. Taxable income = 61,000 - 6,350 - 1,000 = 53,650. 2026 single schedule (68 O.S. 2355(D)(1), HB 2764): 0% on first 3,750 = 0; 2.5% on next 1,150 = 28.75; 3.5% on next 2,300 = 80.50; 4.5% on remainder 53,650 - 7,200 = 46,450 -> 2,090.25. Tax = 2,199.50. (Federal: 61,000 - 16,100 = 44,900; 10% x 12,400 + 12% x 32,500 = 1,240 + 3,900 = 5,140.)"
+  },
+  {
+    "description": "Head of household uses the joint 2026 schedule; gains taxed as ordinary income; AGI over $100,000 so no Oklahoma child credit",
+    "inputs": { "filingStatus": "hoh", "wages": 95000, "longTermGains": 15000, "childrenUnder17": 1 },
+    "federal": { "agi": 110000, "taxableIncome": 85850, "incomeTax": 8538, "standardDeduction": 24150, "itemizes": false },
+    "expectedStateTax": 4009.75,
+    "working": "Form 511: federal AGI = 95,000 + 15,000 = 110,000 (Oklahoma capital gain deduction applies only to Oklahoma-sourced property, none here). Standard deduction (head of household) 9,350. Exemptions: self + 1 dependent = 2 x 1,000 = 2,000. Taxable = 110,000 - 9,350 - 2,000 = 98,650. 2026 schedule for married filing jointly and heads of household (2355(D)(2)): 0% on first 7,500 = 0; 2.5% on next 2,300 = 57.50; 3.5% on next 4,600 = 161.00; 4.5% on remainder 98,650 - 14,400 = 84,250 -> 3,791.25. Tax = 4,009.75. Child tax credit: federal AGI 110,000 > 100,000, none. (Federal HoH: taxable 110,000 - 24,150 = 85,850; ordinary 70,850: 1,770 + 12% x 49,750 = 5,970 + 22% x 3,400 = 748 -> 8,488; gains 15% x 15,000 = 2,250; regular tax 10,738 less child tax credit 2,200 = 8,538.)"
+  }
+]

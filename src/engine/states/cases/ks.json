@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, wages and interest, standard deduction, both brackets",
+    "inputs": { "filingStatus": "single", "wages": 75000, "taxableInterest": 1000 },
+    "federal": { "agi": 76000, "taxableIncome": 59900, "incomeTax": 7890, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 3441.113,
+    "working": "K-40: line 1 federal AGI = 76,000; Kansas AGI 76,000. Line 4 standard deduction (single) 3,605. Line 5 exemption allowance (single) 9,160. Line 7 taxable income = 76,000 - 3,605 - 9,160 = 63,235. Tax (single schedule): 1,196 + 5.58% x (63,235 - 23,000) = 1,196 + 2,245.113 = 3,441.113."
+  },
+  {
+    "description": "Joint, two children: itemizes for Kansas while taking the federal standard deduction; property tax uncapped, medical over 7.5% of AGI",
+    "inputs": { "filingStatus": "mfj", "wages": 140000, "taxableInterest": 2000, "qualifiedDividends": 3000, "childrenUnder17": 2, "medical": 12000, "propertyTax": 6000, "mortgageInterest": 9000, "charitable": 3000 },
+    "federal": { "agi": 145000, "taxableIncome": 112800, "incomeTax": 9630, "standardDeduction": 32200, "itemizes": false },
+    "expectedStateTax": 5567.857,
+    "working": "K-40: Kansas AGI = federal AGI 145,000. Kansas itemized (Schedule A; allowed even though the federal return uses the standard deduction): medical 12,000 - 7.5% x 145,000 (10,875) = 1,125; property tax 6,000 (no SALT cap for Kansas); mortgage interest 9,000; charitable 3,000; total 19,125 > standard 8,240, so 19,125. Exemptions: 18,320 (joint) + 2 x 2,320 = 22,960. Taxable = 145,000 - 19,125 - 22,960 = 102,915. Tax (MFJ schedule): 2,392 + 5.58% x (102,915 - 46,000) = 2,392 + 3,175.857 = 5,567.857. (Federal itemized would be about 24,000 < 32,200, so standard; taxable 112,800; tax 14,030 less 4,400 child credit = 9,630.)"
+  }
+]

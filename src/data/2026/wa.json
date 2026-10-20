@@ -1,0 +1,15 @@
+{
+  "state": "WA",
+  "year": 2026,
+  "sources": [
+    "WA DOR capital gains tax pages and FAQ; RCW 82.87.040, 82.87.120, 82.87.150; ESSB 5813 (2025)"
+  ],
+  "provisional": [
+    "2026 standard deduction and charitable floor/cap not yet published by DOR (due Oct 31, 2026); 2025 values used"
+  ],
+  "comment": "Excise tax on long-term gains from stocks/funds only. Interest, dividends, and real estate are exempt. One deduction per household.",
+  "standardDeduction": 278000,
+  "charitable": { "floor": 278000, "cap": 111000 },
+  "rates": [[0, 0.07], [1000000, 0.099]],
+  "countsAsFederalSalt": false
+}

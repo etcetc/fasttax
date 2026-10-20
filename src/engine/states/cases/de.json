@@ -1,0 +1,16 @@
+[
+  {
+    "description": "DE single, wages + interest, standard deduction, top bracket",
+    "inputs": { "filingStatus": "single", "wages": 70000, "taxableInterest": 2000 },
+    "federal": { "agi": 72000, "taxableIncome": 55900, "incomeTax": 7010, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 3411,
+    "working": "DE AGI = federal AGI = 70,000 + 2,000 = 72,000. Standard deduction (status 1) 3,250 -> taxable 68,750. Rate schedule (30 Del. C. 1102; '$60,000 and over: $2,943.50 + 6.6% of excess'): 0 on first 2,000; 2.2% x 3,000 = 66; 3.9% x 5,000 = 195; 4.8% x 10,000 = 480; 5.2% x 5,000 = 260; 5.55% x 35,000 = 1,942.50 (sum to 60,000 = 2,943.50); 6.6% x 8,750 = 577.50 -> tax 3,521.00. Personal credit line 27a: 1 x $110 = 110. Total 3,521 - 110 = 3,411."
+  },
+  {
+    "description": "DE joint, both 65+: additional standard deduction and senior personal credits",
+    "inputs": { "filingStatus": "mfj", "wages": 30250, "taxableInterest": 20000, "qualifiedDividends": 15000, "nonQualifiedDividends": 5000, "longTermGains": 40000, "filer65": true, "spouse65": true },
+    "federal": { "agi": 110250, "taxableIncome": 62750, "incomeTax": 775, "standardDeduction": 35500, "itemizes": false },
+    "expectedStateTax": 5061,
+    "working": "DE AGI = 30,250 + 20,000 + 15,000 + 5,000 + 40,000 = 110,250 (no DE capital-gains preference). Standard deduction status 2 = 6,500 plus additional standard deduction 2 boxes x $2,500 = 5,000 -> 11,500. Taxable 110,250 - 11,500 = 98,750. Tax: 2,943.50 + 6.6% x (98,750 - 60,000 = 38,750) = 2,943.50 + 2,557.50 = 5,501.00. Personal credits: line 27a 2 x 110 = 220; line 27b (60 or over) 2 x 110 = 220 -> 440. Total 5,501 - 440 = 5,061. (The 60+ pension/eligible-retirement-income exclusion of up to $12,500 each is outside the spec and not applied; federal figures use the 2026 $1,650 add-ons and the $6,000 x 2 senior deduction.)"
+  }
+]

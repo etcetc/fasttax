@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, wages and interest: full standard deduction and exemption, three-rate schedule",
+    "inputs": { "filingStatus": "single", "wages": 70000, "taxableInterest": 2000 },
+    "federal": { "agi": 72000, "taxableIncome": 55900, "incomeTax": 7010, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 3182.2,
+    "working": "Maine AGI = federal AGI = 72,000. Standard deduction (single, 2026) = 15,700; AGI is below the 102,250 phase-out threshold, so in full. Personal exemption = 5,300 (AGI below 341,000). Taxable = 72,000 - 15,700 - 5,300 = 51,000. Schedule #1: 51,000 is in the 27,400-64,850 band: 5.8% x 27,400 = 1,589.20, plus 6.75% x (51,000 - 27,400 = 23,600) = 1,593.00; tax = 3,182.20 (the MRS table rounds the base to $1,589, giving 3,182). No dependents, no surcharge."
+  },
+  {
+    "description": "Joint filers over $1.5M: standard deduction, exemption and dependent credit fully phased out, plus the 2% surcharge",
+    "inputs": { "filingStatus": "mfj", "wages": 1400000, "taxableInterest": 50000, "qualifiedDividends": 50000, "longTermGains": 300000, "childrenUnder17": 1 },
+    "federal": { "agi": 1800000, "taxableIncome": 1767800, "incomeTax": 516751, "standardDeduction": 32200, "itemizes": false },
+    "expectedStateTax": 133659.93,
+    "working": "Maine AGI = 1,400,000 + 50,000 + 50,000 + 300,000 = 1,800,000. Standard deduction: (1,800,000 - 204,550) / 150,000 > 1, so reduced to 0. Personal exemption: (1,800,000 - 409,150) / 125,000 > 1, so 0. Taxable = 1,800,000. Schedule #3: 5.8% x 54,850 = 3,181.30; 6.75% x (129,750 - 54,850 = 74,900) = 5,055.75; 7.15% x (1,800,000 - 129,750 = 1,670,250) = 119,422.875; tax = 127,659.925 (table base $8,237 gives 127,659.875). Surcharge: 2% x (1,800,000 - 1,500,000) = 6,000. Dependent credit: 305 - 0.04 x (1,800,000 - 150,000) < 0, so 0. Total = 133,659.925, rounded 133,659.93."
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "state": "DC",
+  "name": "District of Columbia",
+  "year": 2026,
+  "dataYear": 2025,
+  "sources": [
+    "Rate table, standard deduction, 65+/blind add-on, itemizing rules (federal itemizing required, no SALT cap, state income tax excluded), OBBBA decoupling: 2025 D-40 booklet, https://otr.cfo.dc.gov/sites/default/files/dc/sites/otr/publication/attachments/2025_D40_Book_082026_v1.pdf",
+    "2026 standard deduction = 2025 amounts adjusted for cost of living, through 2029 (B26-0724 emergency act / B26-0661 permanent act): EY Tax News 2026-1962, https://taxnews.ey.com/news/2026-1962 and https://taxnews.ey.com/news/2026-1981-state-and-local-tax-weekly-for-august-21-and-august-28"
+  ],
+  "provisional": [
+    "Standard deduction uses the 2025 amounts ($15,000 single/MFS, $30,000 joint, $22,500 head of household); DC law adjusts them for cost of living for 2026, but the 2026 amounts are not yet published.",
+    "Extra deduction for 65+ uses the 2025 married amount ($1,600 per person); single and head-of-household filers actually get $2,000, and the 2026 amounts are not yet published.",
+    "Rate table is the one in force since 2022 (2025 booklet); no 2026 change was found."
+  ],
+  "notes": [
+    "Itemized deductions are cut by 5% of income over $200,000 ($100,000 married filing separately); that limit is not applied here.",
+    "Married couples can often pay less by filing separately on the same return; this estimate assumes a joint return."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.04], [10000, 0.06], [40000, 0.065], [60000, 0.085], [250000, 0.0925], [500000, 0.0975], [1000000, 0.1075]],
+    "mfj": [[0, 0.04], [10000, 0.06], [40000, 0.065], [60000, 0.085], [250000, 0.0925], [500000, 0.0975], [1000000, 0.1075]],
+    "mfs": [[0, 0.04], [10000, 0.06], [40000, 0.065], [60000, 0.085], [250000, 0.0925], [500000, 0.0975], [1000000, 0.1075]],
+    "hoh": [[0, 0.04], [10000, 0.06], [40000, 0.065], [60000, 0.085], [250000, 0.0925], [500000, 0.0975], [1000000, 0.1075]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 15000, "mfj": 30000, "mfs": 15000, "hoh": 22500 },
+    "seniorExtra": 1600
+  },
+  "itemized": {
+    "medicalFloorRate": 0.075,
+    "propertyTax": true,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": null,
+    "requiresFederalItemizing": true
+  }
+}

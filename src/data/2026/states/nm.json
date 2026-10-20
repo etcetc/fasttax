@@ -1,0 +1,43 @@
+{
+  "state": "NM",
+  "name": "New Mexico",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "Brackets: NMSA 7-2-7 as amended by 2024 HB 252 for tax years 2025+ — https://www.nmlegis.gov/Sessions/24%20Regular/final/HB0252.pdf; 2025 tax rate table — https://taxsim.nber.org/historical_state_tax_forms/NM/2025/2025trt.pdf; rates unchanged for 2026 per 2026 withholding formula — https://news.bloombergtax.com/payroll/new-mexico-releases-2026-withholding-formula",
+    "Capital gains deduction: NMSA 7-2-34 as amended by 2024 HB 252 (lesser of net capital gain or $2,500; half for married filing separately; 40% of up to $1M only for sale of a New Mexico business) — https://www.nmlegis.gov/Sessions/24%20Regular/final/HB0252.pdf",
+    "Standard or itemized deduction as claimed on the federal return: 2025 PIT-1 instructions — https://taxsim.nber.org/historical_state_tax_forms/NM/2025/2025pit-ez-ins.pdf",
+    "Deduction for certain dependents ($4,000 for all but one dependent, MFJ/HoH only) and low/middle-income exemption: NM TRD — https://www.tax.newmexico.gov/wp-content/uploads/2026/08/2020.01.24_NM-Income-Tax-changes-for-the-coming-filing-season.pdf; 2025 PIT-1 instructions"
+  ],
+  "provisional": [
+    "The 2026 PIT-1 is not yet published; brackets and the $2,500 capital gains deduction are statutory for 2025 onward with no 2026 change found. 2026 HB 93 (standard deduction at 205% of federal) was introduced; its enactment was not confirmed and it is not reflected",
+    "Itemized property tax capped at the federal SALT cap ($40,400; $20,200 MFS); the federal cap's phase-down above $505,000 MAGI is not applied"
+  ],
+  "notes": [
+    "New Mexico's $4,000 deduction for each dependent after the first (joint and head-of-household returns) and its low- and middle-income exemptions are not included.",
+    "The capital gains deduction is limited to $2,500; the larger 40% deduction for selling a New Mexico business is not included."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.015], [5500, 0.032], [16500, 0.043], [33500, 0.047], [66500, 0.049], [210000, 0.059]],
+    "mfj": [[0, 0.015], [8000, 0.032], [25000, 0.043], [50000, 0.047], [100000, 0.049], [315000, 0.059]],
+    "mfs": [[0, 0.015], [4000, 0.032], [12500, 0.043], [25000, 0.047], [50000, 0.049], [157500, 0.059]],
+    "hoh": [[0, 0.015], [8000, 0.032], [25000, 0.043], [50000, 0.047], [100000, 0.049], [315000, 0.059]]
+  },
+  "standardDeduction": {
+    "amount": "federal"
+  },
+  "itemized": {
+    "medicalFloorRate": 0.075,
+    "propertyTax": true,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": { "single": 40400, "mfj": 40400, "mfs": 20200, "hoh": 40400 },
+    "requiresFederalItemizing": true
+  },
+  "capitalGains": {
+    "exclusionRate": 1,
+    "exclusionCap": { "single": 2500, "mfj": 2500, "mfs": 1250, "hoh": 2500 },
+    "includesQualifiedDividends": false
+  }
+}

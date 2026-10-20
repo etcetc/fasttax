@@ -1,0 +1,41 @@
+{
+  "state": "DE",
+  "name": "Delaware",
+  "year": 2026,
+  "dataYear": 2025,
+  "sources": [
+    "Rate schedule (tax years 2014 and after): Delaware Dept. of Finance, Tax Preference Report, https://financefiles.delaware.gov/Reports/TaxPref/3-PIT-2025.pdf",
+    "Standard deduction, additional 65+/blind deduction, personal credits, itemizing rules and SALT cap: 2025 PIT-RES instructions, https://revenuefiles.delaware.gov/2025/PITForms_Instructions/Instructions/PIT-RES_Instructions_2025-01.pdf",
+    "2025 PIT-RES form lines 21, 24, 27a/27b: https://revenuefiles.delaware.gov/2025/PITForms_Instructions/PIT-RES_2025-01_PaperInteractiveIPM.pdf",
+    "Proposed 2026 bracket change (HB 13) failed in committee June 2025: https://open.pluralpolicy.com/de/bills/153/HB13"
+  ],
+  "provisional": [
+    "Brackets, standard deduction ($3,250 / $6,500), $2,500 additional deduction for 65+ and $110 personal credits are the 2025 figures; they are fixed in statute (not indexed) and no 2026 change was found, but 2026 forms are not yet published.",
+    "Property-tax cap uses the 2026 federal SALT cap ($40,400; $20,200 married filing separately), which Delaware applies to its itemized deductions; the federal phase-down above $505,000 of income is not modelled.",
+    "The extra $110 personal credit applies from age 60 in Delaware; it is modelled for people 65+ only."
+  ],
+  "notes": [
+    "Married couples can often pay less by filing 'combined separate' (each spouse on their own brackets); this estimate assumes a joint return.",
+    "Filers 60+ may exclude up to $12,500 each of pension and investment income (interest, dividends, gains); that exclusion is not included."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0], [2000, 0.022], [5000, 0.039], [10000, 0.048], [20000, 0.052], [25000, 0.0555], [60000, 0.066]],
+    "mfj": [[0, 0], [2000, 0.022], [5000, 0.039], [10000, 0.048], [20000, 0.052], [25000, 0.0555], [60000, 0.066]],
+    "mfs": [[0, 0], [2000, 0.022], [5000, 0.039], [10000, 0.048], [20000, 0.052], [25000, 0.0555], [60000, 0.066]],
+    "hoh": [[0, 0], [2000, 0.022], [5000, 0.039], [10000, 0.048], [20000, 0.052], [25000, 0.0555], [60000, 0.066]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 3250, "mfj": 6500, "mfs": 3250, "hoh": 3250 },
+    "seniorExtra": 2500
+  },
+  "itemized": {
+    "medicalFloorRate": 0.075,
+    "propertyTax": true,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": { "single": 40400, "mfj": 40400, "mfs": 20200, "hoh": 40400 },
+    "requiresFederalItemizing": false
+  },
+  "credits": { "perFiler": 110, "perDependent": 110, "perSenior": 110 }
+}

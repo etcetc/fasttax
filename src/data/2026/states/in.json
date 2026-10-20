@@ -1,0 +1,41 @@
+{
+  "state": "IN",
+  "name": "Indiana",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "Rate 2.95% for 2026: IC 6-3-2-1 as amended by HEA 1001-2023; Indiana DOR 2026 withholding update (reported by Bloomberg Tax, Dec 2025)",
+    "Exemptions ($1,000 per filer and dependent, $1,500 additional per dependent child, $1,000 per person 65+/blind): IT-40 Schedule 3, 2025 (State Form 53997, R16/9-25)",
+    "Homeowner's residential property tax deduction, lesser of tax paid or $2,500 ($1,250 MFS): IT-40 Schedule 2, 2025 (State Form 53996, R16/9-25)",
+    "County tax = IT-40 line 7 x county rate: Schedule CT-40, 2025 (State Form 47907); county rates: Indiana DOR Departmental Notice #1 (in.gov/dor/files/dn01.pdf, rates effective Oct 1, 2026)"
+  ],
+  "provisional": [
+    "Exemption amounts are from the 2025 IT-40 Schedule 3 (fixed in statute, not indexed); 2026 forms not yet published",
+    "Homeowner's property tax deduction cap ($2,500; $1,250 married filing separately) is from the 2025 IT-40 Schedule 2",
+    "County rate 1.97% is the median of the 92 county rates in Departmental Notice #1 (October 2026 edition), not your county's rate",
+    "Dependent exemption is $2,500 (the $1,000 exemption plus the $1,500 extra for a child under 19 or a full-time student under 24); other dependents get only $1,000"
+  ],
+  "notes": [
+    "County income tax uses the median Indiana county rate, 1.97%; actual rates run from 0.5% to 3.0% (Marion County 2.02%, Hamilton 1.1%, Lake 1.5%)."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.0295]],
+    "mfj": [[0, 0.0295]],
+    "mfs": [[0, 0.0295]],
+    "hoh": [[0, 0.0295]]
+  },
+  "exemptions": {
+    "perFiler": 1000,
+    "perDependent": 2500,
+    "perSenior": 1000
+  },
+  "propertyTaxDeduction": {
+    "cap": { "single": 2500, "mfj": 2500, "mfs": 1250, "hoh": 2500 }
+  },
+  "localTax": {
+    "rate": 0.0197,
+    "label": "County income tax (median county rate)",
+    "base": "stateTaxable"
+  }
+}

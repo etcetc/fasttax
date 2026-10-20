@@ -1,0 +1,56 @@
+{
+  "state": "MN",
+  "name": "Minnesota",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "MN DOR press release 2025-12-16 and 'Inflation Adjusted Amounts, Tax Year 2026' (revenue.state.mn.us/sites/default/files/2025-12/inflation-adjusted-amounts-2026.pdf): brackets, standard deduction, aged/blind add-on, deduction-limitation thresholds, dependent exemption and its phaseout thresholds",
+    "Minn. Stat. 290.0123 subd. 5 (standard deduction reduced by 3% of AGI between the two thresholds plus 10% above the second, at most 80%)",
+    "Minn. Stat. 290.0121 subd. 2 (dependent exemption reduced 2% per $2,500 of AGI over the threshold, $1,250 if married filing separately)",
+    "Minn. Stat. 290.0122 (itemized deductions: medical above 10% of AGI, real and personal property tax capped at $10,000 / $5,000 MFS, mortgage interest, charitable gifts)",
+    "Minn. Stat. 290.033 (1% tax on net investment income over $1,000,000, not indexed)"
+  ],
+  "provisional": [],
+  "notes": [
+    "Minnesota also cuts itemized deductions (other than medical) for incomes above about $244,000; that cut is not applied here, so estimates for high earners who itemize may be low.",
+    "Refundable credits (child and working family credits) are not included."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.0535], [33310, 0.068], [109430, 0.0785], [203150, 0.0985]],
+    "mfj":    [[0, 0.0535], [48700, 0.068], [193480, 0.0785], [337930, 0.0985]],
+    "mfs":    [[0, 0.0535], [24350, 0.068], [96740, 0.0785], [168965, 0.0985]],
+    "hoh":    [[0, 0.0535], [41010, 0.068], [164800, 0.0785], [270060, 0.0985]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 15300, "mfj": 30600, "mfs": 15300, "hoh": 23000 },
+    "seniorExtra": 1600,
+    "phaseout": {
+      "start": { "single": 309780, "mfj": 309780, "mfs": 154890, "hoh": 309780 },
+      "ratePerDollar": 0.1
+    }
+  },
+  "itemized": {
+    "medicalFloorRate": 0.1,
+    "propertyTax": true,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": { "single": 10000, "mfj": 10000, "mfs": 5000, "hoh": 10000 },
+    "requiresFederalItemizing": false
+  },
+  "exemptions": {
+    "perFiler": 0,
+    "perDependent": 5300,
+    "perSenior": 0,
+    "phaseout": {
+      "start": { "single": 244500, "mfj": 366700, "mfs": 183350, "hoh": 305600 },
+      "end":   { "single": 367000, "mfj": 489200, "mfs": 244600, "hoh": 428100 }
+    }
+  },
+  "surtax": {
+    "threshold": { "single": 1000000, "mfj": 1000000, "mfs": 1000000, "hoh": 1000000 },
+    "rate": 0.01,
+    "base": "investmentIncome",
+    "label": "Net investment income tax (1% over $1 million)"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "state": "OK",
+  "name": "Oklahoma",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "2026 rates and brackets (0% / 2.5% / 3.5% / 4.5%; head of household uses the joint table): 2025 HB 2764, enrolled, amending 68 O.S. 2355(D) (legiscan.com/OK/text/HB2764/id/3243767/Oklahoma-2025-HB2764-Enrolled.pdf)",
+    "Standard deduction $6,350 / $12,700 / $9,350, $1,000 per exemption, itemizing follows the federal choice, $17,000 itemized cap excluding medical and charity, state income tax not deductible: 2025 Form 511 instructions (oklahoma.gov/content/dam/ok/en/tax/documents/forms/individuals/current/511-Pkt.pdf)"
+  ],
+  "provisional": [
+    "Standard deduction, $1,000 exemptions and the $17,000 itemized-deduction cap are from the 2025 Form 511 instructions (fixed in statute, not indexed)",
+    "The $17,000 itemized cap is applied to married filing separately returns unchanged; the instructions do not give a separate amount"
+  ],
+  "notes": [
+    "Oklahoma caps itemized deductions other than medical and charity at $17,000 in total; this estimate applies the cap to property tax only.",
+    "Oklahoma's child tax credit (5% of the federal credit, federal AGI $100,000 or less) is not included."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0], [3750, 0.025], [4900, 0.035], [7200, 0.045]],
+    "mfj": [[0, 0], [7500, 0.025], [9800, 0.035], [14400, 0.045]],
+    "mfs": [[0, 0], [3750, 0.025], [4900, 0.035], [7200, 0.045]],
+    "hoh": [[0, 0], [7500, 0.025], [9800, 0.035], [14400, 0.045]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 6350, "mfj": 12700, "mfs": 6350, "hoh": 9350 }
+  },
+  "itemized": {
+    "medicalFloorRate": 0.075,
+    "propertyTax": true,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": { "single": 17000, "mfj": 17000, "mfs": 17000, "hoh": 17000 },
+    "requiresFederalItemizing": true
+  },
+  "exemptions": {
+    "perFiler": 1000,
+    "perDependent": 1000,
+    "perSenior": 0
+  }
+}

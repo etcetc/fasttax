@@ -1,0 +1,38 @@
+{
+  "state": "NJ",
+  "name": "New Jersey",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "Brackets: NJ-1040 Tax Rate Schedules, 2020 and after (Table A single/MFS, Table B MFJ/HoH/QW) — https://www.disabilityombudsman.nj.gov/treasury/taxation/pdf/current/njtaxratesch.pdf (index: https://www.nj.gov/www.nj.gov/treasury/taxation/taxtables.shtml)",
+    "Exemptions ($1,000 regular, $1,000 age 65+, $1,500 per dependent) and medical expenses over 2% of income: 2025 Form NJ-1040 lines 6-12, 31 — https://www.nj.gov/treasury/taxation/pdf/current/1040.pdf; NJ Division of Taxation — https://www.nj.gov/treasury/taxation/njit13.shtml",
+    "Property tax deduction (lesser of taxes paid or $15,000; half each for spouses filing separately in the same home): https://nj.gov/treasury/taxation/njit35.shtml",
+    "No 2026 rate/exemption changes: FY2026 budget (https://www.mccarter.com/insights/new-jersey-fy-2026-budget-tax-law-changes/) and FY2027 budget (EY Tax News 2026-1456, https://taxnews.ey.com/news/2026-1456) change only QSBS, the alternative business calculation and the child tax credit"
+  ],
+  "provisional": [
+    "The 2026 NJ-1040 is not yet published; rate schedules, exemptions and the $15,000 property-tax cap are statutory (not indexed) and taken from the 2025 forms, with no 2026 change found",
+    "Married filing separately property-tax cap set to $7,500 on the assumption that spouses share one home (each may use half the taxes)"
+  ],
+  "notes": [
+    "New Jersey's refundable child tax credit, retirement income exclusion, and ANCHOR / Senior Freeze property-tax relief are not included.",
+    "New Jersey does not allow the federal deduction for half of self-employment tax, so self-employed filers may owe a little more than shown."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.014], [20000, 0.0175], [35000, 0.035], [40000, 0.05525], [75000, 0.0637], [500000, 0.0897], [1000000, 0.1075]],
+    "mfj": [[0, 0.014], [20000, 0.0175], [50000, 0.0245], [70000, 0.035], [80000, 0.05525], [150000, 0.0637], [500000, 0.0897], [1000000, 0.1075]],
+    "mfs": [[0, 0.014], [20000, 0.0175], [35000, 0.035], [40000, 0.05525], [75000, 0.0637], [500000, 0.0897], [1000000, 0.1075]],
+    "hoh": [[0, 0.014], [20000, 0.0175], [50000, 0.0245], [70000, 0.035], [80000, 0.05525], [150000, 0.0637], [500000, 0.0897], [1000000, 0.1075]]
+  },
+  "itemized": {
+    "medicalFloorRate": 0.02,
+    "propertyTax": false,
+    "mortgageInterest": false,
+    "charitable": false,
+    "saltCap": null
+  },
+  "exemptions": { "perFiler": 1000, "perDependent": 1500, "perSenior": 1000 },
+  "propertyTaxDeduction": {
+    "cap": { "single": 15000, "mfj": 15000, "mfs": 7500, "hoh": 15000 }
+  }
+}

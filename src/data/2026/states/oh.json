@@ -1,0 +1,35 @@
+{
+  "state": "OH",
+  "name": "Ohio",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": ["2026 rate: $332.00 plus 2.75% of Ohio taxable nonbusiness income above $26,050 \u2014 R.C. 5747.02(A)(3)(c) as amended by HB 96 (eff. 9/30/2025): https://codes.ohio.gov/ohio-revised-code/section-5747.02", "Personal and dependent exemption only if MAGI is under $500,000 from 2026 \u2014 R.C. 5747.025: https://codes.ohio.gov/ohio-revised-code/section-5747.025", "Business income deduction (first $250,000 exempt, rest at 3%): https://www.keka.com/free-tools/calculators/salary-paycheck-calculator/ohio"],
+  "provisional": ["The $26,050 cliff (tax jumps from $0 to $332.00) is modelled as 2.75% from $13,977.27, which is exact above $26,050 but overstates tax by up to $332 for Ohio taxable income between $13,977 and $26,050", "Exemption fixed at $1,900 per person (the lowest tier); 2026 indexed amounts not confirmed, so filers under $80,000 MAGI are slightly overstated", "Joint filing credit, senior citizen credit and $20 low-income exemption credit not included"],
+  "notes": ["Municipal and school-district income taxes (typically 1\u20132.5% of wages) are not included.", "Ohio's business income deduction (first $250,000 of business income exempt, the rest taxed at 3%) is not applied; self-employment income is taxed as ordinary income here."],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0], [13977.27, 0.0275]],
+    "mfj": [[0, 0], [13977.27, 0.0275]],
+    "mfs": [[0, 0], [13977.27, 0.0275]],
+    "hoh": [[0, 0], [13977.27, 0.0275]]
+  },
+  "exemptions": {
+    "perFiler": 1900,
+    "perDependent": 1900,
+    "perSenior": 0,
+    "phaseout": {
+      "start": {
+        "single": 500000,
+        "mfj": 500000,
+        "mfs": 500000,
+        "hoh": 500000
+      },
+      "end": {
+        "single": 500001,
+        "mfj": 500001,
+        "mfs": 500001,
+        "hoh": 500001
+      }
+    }
+  }
+}

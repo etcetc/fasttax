@@ -1,0 +1,41 @@
+{
+  "state": "KS",
+  "name": "Kansas",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "Rates and brackets (5.2% up to $23,000 / $46,000 MFJ, 5.58% above): K.S.A. 79-32,110 as amended by 2024 Special Session SB 1 (EY Tax News 2024-1459); 2025 Kansas Tax Table (ksrevenue.gov/incomebook25.html)",
+    "No rate reduction for 2026 under SB 269: Kansas DOR Notice 25-06 (ksrevenue.gov/taxnotices/notice25-06.pdf)",
+    "Standard deduction, 65+/blind additions, personal and dependent exemptions, itemized deduction rules: Kansas Individual Income Tax Booklet 2025 (ksrevenue.gov/incomebook25.html)"
+  ],
+  "provisional": [
+    "Standard deduction ($3,605 single, $8,240 MFJ, $4,120 MFS, $6,180 HoH) and 65+ additions are from the 2025 booklet; unchanged from 2024, so not indexed",
+    "Exemptions ($9,160 per filer, $2,320 per dependent) are from the 2025 booklet",
+    "Extra standard deduction for 65+ is $700 per person here; single and head-of-household filers actually get $850"
+  ],
+  "notes": [],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.052], [23000, 0.0558]],
+    "mfj": [[0, 0.052], [46000, 0.0558]],
+    "mfs": [[0, 0.052], [23000, 0.0558]],
+    "hoh": [[0, 0.052], [23000, 0.0558]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 3605, "mfj": 8240, "mfs": 4120, "hoh": 6180 },
+    "seniorExtra": 700
+  },
+  "itemized": {
+    "medicalFloorRate": 0.075,
+    "propertyTax": true,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": null,
+    "requiresFederalItemizing": false
+  },
+  "exemptions": {
+    "perFiler": 9160,
+    "perDependent": 2320,
+    "perSenior": 0
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "state": "GA",
+  "name": "Georgia",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "2026 rate 4.99%, standard deduction $15,000 / $30,000, dependent exemption $5,000 (HB 463): Georgia DOR 2026 Employer's Tax Guide (updated June 2026), https://dor.georgia.gov/document/document/2026-employers-tax-guide-updated-june-2026/download",
+    "HB 463 signed May 11, 2026: https://gov.georgia.gov/press-releases/2026-05-11/gov-kemp-signs-legislation-lowering-taxes-and-supporting-economic-growth",
+    "Itemizing rules (must match federal choice, state income tax removed, $10,000 / $5,000 SALT limit), no 65+ add-on, retirement exclusion: 2025 IT-511 booklet, https://dor.georgia.gov/document/document/2025-it-511-individual-income-tax-booklet/download and 2025 Form 500, https://apps.dor.ga.gov/FillableForms/webpdf/examples/2025GA500.pdf",
+    "SALT limit stays at $10,000 (HB 1199, 2026 IRC conformity): https://gscpa.org/content/Home/News/Professional-News/News-Alert--Governor-Signs-Georgia-Conformity-Bill--HB-1199--into-Law-.aspx"
+  ],
+  "provisional": [
+    "Itemizing rules (medical floor, SALT limit mechanics) are from the 2025 IT-511 booklet; the 2026 booklet is not yet published."
+  ],
+  "notes": [
+    "Filers 62+ can exclude $35,000 (65+: $65,000) each of retirement income, including interest, dividends and gains; that exclusion is not included.",
+    "Georgia's $10,000 tax-deduction limit is applied to property tax alone; Georgia's own proration formula can allow less."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.0499]],
+    "mfj": [[0, 0.0499]],
+    "mfs": [[0, 0.0499]],
+    "hoh": [[0, 0.0499]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 15000, "mfj": 30000, "mfs": 15000, "hoh": 15000 }
+  },
+  "itemized": {
+    "medicalFloorRate": 0.075,
+    "propertyTax": true,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": { "single": 10000, "mfj": 10000, "mfs": 5000, "hoh": 10000 },
+    "requiresFederalItemizing": true
+  },
+  "exemptions": { "perFiler": 0, "perDependent": 5000, "perSenior": 0 }
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, wages and interest, flat 3.07%",
+    "inputs": { "filingStatus": "single", "wages": 50000, "taxableInterest": 800 },
+    "federal": { "agi": 50800, "taxableIncome": 34700, "incomeTax": 3916, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 1559.56,
+    "working": "PA-40: compensation 50,000 + interest 800 = total PA taxable income 50,800 (no standard deduction or exemptions). Tax = 50,800 x 3.07% = 1,559.56. (Federal: 50,800 - 16,100 = 34,700; 1,240 + 12% x 22,300 = 2,676 -> 3,916.)"
+  },
+  {
+    "description": "Married, investment-heavy with home expenses: Pennsylvania allows no deductions, every class taxed at 3.07%",
+    "inputs": { "filingStatus": "mfj", "wages": 150000, "taxableInterest": 3000, "qualifiedDividends": 8000, "nonQualifiedDividends": 2000, "longTermGains": 40000, "childrenUnder17": 0, "propertyTax": 9000, "mortgageInterest": 12000, "charitable": 5000 },
+    "federal": { "agi": 203000, "taxableIncome": 170800, "incomeTax": 23640, "standardDeduction": 32200, "itemizes": false },
+    "expectedStateTax": 6232.1,
+    "working": "PA-40: compensation 150,000 + interest 3,000 + dividends 10,000 + net gains 40,000 = 203,000. Property tax, mortgage interest and gifts are not deductible in Pennsylvania; no exemptions. Tax = 203,000 x 3.07% = 6,232.10. (Federal: itemized = SALT 9,000 + 6,232 + mortgage 12,000 + gifts 5,000 less 0.5% x 203,000 = 1,015 -> 31,217 < 32,200, so standard. Taxable 170,800; ordinary 122,800: 2,480 + 9,120 + 22% x 22,000 = 4,840 -> 16,440; gains/qualified dividends 15% x 48,000 = 7,200; 23,640.)"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Single, wages and interest: flat 3% after the 2026 standard deduction",
+    "inputs": { "filingStatus": "single", "wages": 60000, "taxableInterest": 1500 },
+    "federal": { "agi": 61500, "taxableIncome": 45400, "incomeTax": 5200, "standardDeduction": 16100, "itemizes": false },
+    "expectedStateTax": 1458.75,
+    "working": "IT-540 line 7 federal AGI = 60,000 + 1,500 = 61,500. Line 8 standard deduction (single, 2026 indexed) = 12,875. Line 10 = 61,500 - 12,875 = 48,625. Line 11 = 48,625 x 3% = 1,458.75 (the form rounds to 1,459). No exemptions or credits apply."
+  },
+  {
+    "description": "Joint filers with two children, dividends and long-term gains: no dependent exemptions and gains taxed in full at 3%",
+    "inputs": { "filingStatus": "mfj", "wages": 120000, "qualifiedDividends": 4000, "longTermGains": 10000, "childrenUnder17": 2 },
+    "federal": { "agi": 134000, "taxableIncome": 101800, "incomeTax": 6075, "standardDeduction": 32200, "itemizes": false },
+    "expectedStateTax": 3247.5,
+    "working": "Federal AGI = 120,000 + 4,000 + 10,000 = 134,000. Louisiana repealed dependent exemptions and the net capital gain deduction (Act 11 of 2024), so the children and gains change nothing. Standard deduction (MFJ, 2026 indexed) = 25,750. Taxable = 134,000 - 25,750 = 108,250. Tax = 108,250 x 3% = 3,247.50."
+  }
+]

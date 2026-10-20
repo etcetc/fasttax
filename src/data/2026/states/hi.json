@@ -1,0 +1,42 @@
+{
+  "state": "HI",
+  "name": "Hawaii",
+  "year": 2026,
+  "dataYear": 2026,
+  "sources": [
+    "2025-2026 rate schedules and 2026 standard deduction (Act 46, SLH 2024): Hawaii DoTax Announcement 2024-03, https://files.hawaii.gov/tax/news/announce/ann24-03.pdf",
+    "Act 24, SLH 2026 changes brackets from 2027 only; standard deduction increases kept: DoTax TRC legislative update, https://files.hawaii.gov/tax/stats/trc/docs2025/2026-05-Karacaovali_Presentation_TRC_Legislative_Update.pdf and EY Tax News 2026-1440, https://taxnews.ey.com/news/2026-1440-hawaii-legislation-establishes-higher-personal-income-tax-on-income-over-1-million",
+    "Personal exemption $1,144 per exemption incl. extra exemption for 65+; capital gains worksheet: 2025 Form N-11, https://files.hawaii.gov/tax/forms/2025/n11_i.pdf",
+    "Capital gains alternative tax 7.25%: HRS 235-51(f)"
+  ],
+  "provisional": [
+    "Itemizing rules (no SALT cap, 7.5% medical floor, itemizing allowed without itemizing federally) are carried over from prior-year Hawaii law; the 2025/2026 itemized-deduction instructions could not be confirmed."
+  ],
+  "notes": [
+    "Hawaii trims itemized deductions for higher incomes; that limit is not applied here.",
+    "Qualified dividends are taxed as ordinary income; only long-term gains get the 7.25% maximum rate."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0.014], [9600, 0.032], [14400, 0.055], [19200, 0.064], [24000, 0.068], [36000, 0.072], [48000, 0.076], [125000, 0.079], [175000, 0.0825], [225000, 0.09], [275000, 0.1], [325000, 0.11]],
+    "mfj": [[0, 0.014], [19200, 0.032], [28800, 0.055], [38400, 0.064], [48000, 0.068], [72000, 0.072], [96000, 0.076], [250000, 0.079], [350000, 0.0825], [450000, 0.09], [550000, 0.1], [650000, 0.11]],
+    "mfs": [[0, 0.014], [9600, 0.032], [14400, 0.055], [19200, 0.064], [24000, 0.068], [36000, 0.072], [48000, 0.076], [125000, 0.079], [175000, 0.0825], [225000, 0.09], [275000, 0.1], [325000, 0.11]],
+    "hoh": [[0, 0.014], [14400, 0.032], [21600, 0.055], [28800, 0.064], [36000, 0.068], [54000, 0.072], [72000, 0.076], [187500, 0.079], [262500, 0.0825], [337500, 0.09], [412500, 0.1], [487500, 0.11]]
+  },
+  "standardDeduction": {
+    "amount": { "single": 8000, "mfj": 16000, "mfs": 8000, "hoh": 12000 }
+  },
+  "itemized": {
+    "medicalFloorRate": 0.075,
+    "propertyTax": true,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": null,
+    "requiresFederalItemizing": false
+  },
+  "exemptions": { "perFiler": 1144, "perDependent": 1144, "perSenior": 1144 },
+  "capitalGains": {
+    "maxRate": 0.0725,
+    "includesQualifiedDividends": false
+  }
+}

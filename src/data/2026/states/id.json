@@ -1,0 +1,48 @@
+{
+  "state": "ID",
+  "name": "Idaho",
+  "year": 2026,
+  "dataYear": 2025,
+  "sources": [
+    "Rate 5.3% (HB 40, 2025), unchanged for 2026: Idaho HB 40 statement of purpose, https://legislature.idaho.gov/wp-content/uploads/sessioninfo/2025/legislation/H0040SOP.pdf and EY Tax News 2026-1829, https://taxnews.ey.com/news/2026-1829",
+    "2025 zero-rate amounts $4,811 single/MFS, $9,622 joint/HoH/surviving spouse: Thomson Reuters Planner CS Idaho 2025 release notes, https://www.thomsonreuters.com/en-us/help/planner-cs/release-notes/idaho-2025-1-1 ; HoH/MFS grouping and itemizing rules: 2024 Form 40 instructions, https://tax.idaho.gov/wp-content/uploads/forms/EIN00046/EIN00046_10-23-2024.pdf",
+    "Conformity to federal OBBBA incl. enhanced senior deduction (HB 559, 2026, retroactive to 2025): https://www.kmvt.com/2026/02/12/idaho-governor-signs-bill-adopting-nearly-all-tax-changes-federal-big-beautiful-bill/ and https://www.kmvt.com/2026/03/04/idaho-taxpayers-can-now-file-2025-returns-claim-new-conformity-deductions",
+    "Idaho child tax credit sunset after 2025: Idaho State Tax Commission, https://tax.idaho.gov/pressrelease/withholding-tables-updated-for-2026/",
+    "Federal senior deduction ($6,000 per person 65+, reduced 6% of MAGI over $75,000 / $150,000 joint, not allowed MFS): IRC 151(d)(5)(C)"
+  ],
+  "provisional": [
+    "Zero-rate amounts ($4,811 single/MFS, $9,622 joint/HoH) are the 2025 values; Idaho indexes them annually and the 2026 amounts are not yet published.",
+    "Itemizing rules are from the 2024 Form 40 instructions; property tax is capped at the 2026 federal SALT cap ($40,400; $20,200 MFS) without the phase-down above $505,000 of income."
+  ],
+  "notes": [
+    "Idaho's refundable food tax credit ($155 per person in 2025) is not included."
+  ],
+  "startingPoint": "federalAgi",
+  "brackets": {
+    "single": [[0, 0], [4811, 0.053]],
+    "mfj": [[0, 0], [9622, 0.053]],
+    "mfs": [[0, 0], [4811, 0.053]],
+    "hoh": [[0, 0], [9622, 0.053]]
+  },
+  "standardDeduction": {
+    "amount": "federal"
+  },
+  "itemized": {
+    "medicalFloorRate": 0.075,
+    "propertyTax": true,
+    "mortgageInterest": true,
+    "charitable": true,
+    "saltCap": { "single": 40400, "mfj": 40400, "mfs": 20200, "hoh": 40400 },
+    "requiresFederalItemizing": false
+  },
+  "exemptions": {
+    "perFiler": 0,
+    "perDependent": 0,
+    "perSenior": 6000,
+    "phaseout": {
+      "basis": "federalAgi",
+      "start": { "single": 75000, "mfj": 150000, "mfs": 0, "hoh": 75000 },
+      "end": { "single": 175000, "mfj": 250000, "mfs": 1, "hoh": 175000 }
+    }
+  }
+}
